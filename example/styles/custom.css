@@ -1,0 +1,18 @@
+/* Example customisation, loaded after the qmd2pw base style
+   (format: html: css: styles/custom.css). */
+
+:root {
+  --pw-accent: #8a1538;
+  --pw-accent-soft: #f6e8ed;
+  --pw-link: #8a1538;
+  --pw-link-hover: #5e0e26;
+}
+
+html[data-theme="dark"] {
+  --pw-accent: #e88aa5;
+  --pw-accent-soft: #3a1e27;
+  --pw-link: #f0a3b9;
+  --pw-link-hover: #f8cbd8;
+}
+
+.pw-title { letter-spacing: -0.015em; }

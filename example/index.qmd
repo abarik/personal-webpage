@@ -1,0 +1,162 @@
+---
+title: "Dr. Minta Eszter"
+subtitle: "[egyetemi docens]{lang=hu}[Associate Professor]{lang=en}"
+description: >-
+  [Dr. Minta Eszter személyes oldala: kutatás, oktatás, publikációk.]{lang=hu}[Personal page of Dr. Eszter Minta: research, teaching and publications.]{lang=en}
+author:
+  - name: Dr. Minta Eszter
+    email: minta.eszter@example.org
+    orcid: 0000-0000-0000-0000
+    affiliations:
+      - name: "[Példa Tudományegyetem]{lang=hu}[University of Példa]{lang=en}"
+        department: "[Alkalmazott Statisztika Tanszék]{lang=hu}[Department of Applied Statistics]{lang=en}"
+date-modified: last-modified
+lang: hu
+image: images/profile.svg
+about:
+  template: trestles
+  image-shape: rounded
+  links:
+    - icon: envelope
+      text: E-mail
+      href: mailto:minta.eszter@example.org
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://example.org/scholar/minta-eszter
+    - icon: orcid
+      text: ORCID
+      href: https://orcid.org/0000-0000-0000-0000
+    - icon: github
+      text: GitHub
+      href: https://example.org/code/minta-eszter
+    - icon: file-earmark-pdf
+      text: "[Önéletrajz]{lang=hu}[CV]{lang=en}"
+      href: https://example.org/minta-eszter-cv.pdf
+format:
+  html:
+    css: styles/custom.css
+    embed-resources: true
+qmd2pw:
+  languages: [hu, en]
+  default-theme: auto
+---
+
+::: {lang="hu"}
+A Példa Tudományegyetem Alkalmazott Statisztika Tanszékének docense vagyok.
+Kutatásaim középpontjában a **többszintű modellek**, a **reprodukálható adatelemzés**
+és a statisztikaoktatás módszertana áll. Szívesen fogadok érdeklődő hallgatókat
+szakdolgozati és TDK-témákhoz.
+:::
+
+::: {lang="en"}
+I am an associate professor at the Department of Applied Statistics, University of Példa.
+My research focuses on **multilevel models**, **reproducible data analysis** and the
+didactics of statistics. Students interested in thesis or research projects are always welcome.
+:::
+
+## [Kutatás]{lang=hu}[Research]{lang=en} {#research}
+
+::: {lang="hu"}
+### Fő kutatási területek
+
+- Többszintű és longitudinális modellek a társadalomtudományokban
+- Bayes-i módszerek kis mintás vizsgálatokban
+- Reprodukálható kutatási munkafolyamatok (R, Python, Quarto)
+
+### Folyamatban lévő projektek
+
+Adatvezérelt tanulástámogatás (2024–2027)
+: Hallgatói tanulási adatok elemzése a lemorzsolódás korai előrejelzésére.
+
+Nyílt statisztikai tananyagok (2025–2026)
+: Interaktív, nyílt hozzáférésű jegyzetek készítése bevezető statisztika kurzusokhoz.
+:::
+
+::: {lang="en"}
+### Main research areas
+
+- Multilevel and longitudinal models in the social sciences
+- Bayesian methods for small-sample studies
+- Reproducible research workflows (R, Python, Quarto)
+
+### Ongoing projects
+
+Data-driven learning support (2024–2027)
+: Analysing student learning data for early prediction of dropout.
+
+Open statistics course materials (2025–2026)
+: Interactive, open-access lecture notes for introductory statistics courses.
+:::
+
+## [Oktatás]{lang=hu}[Teaching]{lang=en} {#teaching}
+
+::: {lang="hu"}
+| Kurzus                          | Típus       | Félév       | Kód     |
+|---------------------------------|-------------|-------------|---------|
+| Bevezetés a statisztikába       | előadás     | ősz         | STAT101 |
+| Adatelemzés R-ben               | gyakorlat   | ősz, tavasz | STAT230 |
+| Többszintű modellek             | szeminárium | tavasz      | STAT412 |
+| Reprodukálható kutatás Quartóval | szeminárium | tavasz      | STAT455 |
+
+A kurzusok anyagai és a vizsgakövetelmények az egyetemi tanulmányi rendszerben érhetők el.
+:::
+
+::: {lang="en"}
+| Course                           | Type     | Semester         | Code    |
+|----------------------------------|----------|------------------|---------|
+| Introduction to Statistics       | lecture  | autumn           | STAT101 |
+| Data Analysis in R               | practice | autumn, spring   | STAT230 |
+| Multilevel Models                | seminar  | spring           | STAT412 |
+| Reproducible Research with Quarto | seminar  | spring           | STAT455 |
+
+Course materials and exam requirements are available in the university's learning management system.
+:::
+
+## [Publikációk]{lang=hu}[Publications]{lang=en} {#publications}
+
+[Válogatott publikációk; a teljes lista a Google Scholar-profilomon érhető el.]{lang=hu}[Selected publications; the full list is on my Google Scholar profile.]{lang=en}
+
+1. Minta, E., & Példa, J. (2025). Multilevel models for small samples: A Bayesian perspective.
+   *Journal of Example Statistics*, 12(3), 145–167.
+2. Minta, E. (2024). Reprodukálható adatelemzés a felsőoktatásban.
+   *Példa Statisztikai Szemle*, 8(1), 22–39.
+3. Példa, J., Minta, E., & Teszt, A. (2023). Early warning indicators of student dropout.
+   *Example Journal of Learning Analytics*, 5(2), 77–95.
+4. Minta, E. (2022). *Bevezetés a többszintű modellezésbe* [Introduction to multilevel modelling].
+   Példa Egyetemi Kiadó.
+
+## [Hallgatóknak]{lang=hu}[For students]{lang=en} {#students}
+
+::: {.callout-note}
+## [Fogadóóra]{lang=hu}[Office hours]{lang=en}
+
+[Szerda 10:00–12:00, B épület 214-es szoba, illetve előzetes egyeztetés alapján online.]{lang=hu}[Wednesdays 10:00–12:00, Building B, Room 214, or online by appointment.]{lang=en}
+:::
+
+:::: {.columns}
+::: {.column width="50%"}
+### [Szakdolgozati témák]{lang=hu}[Thesis topics]{lang=en}
+
+- [Hiányzó adatok kezelése longitudinális vizsgálatokban]{lang=hu}[Handling missing data in longitudinal studies]{lang=en}
+- [Bayes-i modellek összehasonlítása kis mintákon]{lang=hu}[Comparing Bayesian models on small samples]{lang=en}
+- [Tanulási analitika a felsőoktatásban]{lang=hu}[Learning analytics in higher education]{lang=en}
+:::
+
+::: {.column width="50%"}
+### [Konzultáció]{lang=hu}[Consultation]{lang=en}
+
+[Témavezetést elsősorban statisztika és adattudomány szakos hallgatóknak vállalok. Jelentkezés előtt érdemes átnézni a fenti témákat, és egy rövid, egyoldalas tervvel megkeresni e-mailben.]{lang=hu}[I mainly supervise students in statistics and data science. Before applying, please look through the topics above and email me a short, one-page proposal.]{lang=en}
+:::
+::::
+
+## [Elérhetőség]{lang=hu}[Contact]{lang=en} {#contact}
+
+::: {lang="hu"}
+**Cím:** Példa Tudományegyetem, Alkalmazott Statisztika Tanszék, B épület 214.\
+**E-mail:** <minta.eszter@example.org>
+:::
+
+::: {lang="en"}
+**Address:** University of Példa, Department of Applied Statistics, Building B, Room 214\
+**Email:** <minta.eszter@example.org>
+:::
