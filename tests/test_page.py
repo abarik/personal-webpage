@@ -3,7 +3,7 @@ from pathlib import Path
 from qmd2pw.cli import main
 from qmd2pw.page import build
 
-EXAMPLE = Path(__file__).resolve().parent.parent / "example" / "index.qmd"
+EXAMPLE = Path(__file__).resolve().parent.parent / "version1.0" / "index.qmd"
 
 
 def write(tmp_path: Path, text: str, name: str = "page.qmd") -> Path:

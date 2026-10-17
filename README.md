@@ -18,7 +18,7 @@ python -m venv .venv
 ## Usage
 
 ```sh
-qmd2pw example/index.qmd                   # writes example/index.html
+qmd2pw version1.0/index.qmd                # writes version1.0/index.html
 qmd2pw page.qmd -o site/index.html         # explicit output file
 qmd2pw page.qmd --css extra.css            # extra stylesheet, applied last
 qmd2pw page.qmd --embed-resources          # single self-contained HTML file
@@ -28,7 +28,18 @@ python -m qmd2pw page.qmd                  # same as the qmd2pw command
 ## Writing the document
 
 Use the standard Quarto structure: YAML front matter, then Markdown with Pandoc
-extensions. [`example/index.qmd`](example/index.qmd) is a complete example.
+extensions. [`version1.0/index.qmd`](version1.0/index.qmd) is a complete example.
+
+## Publishing
+
+The repository serves its GitHub Pages site from the `docs/` folder. After you
+change the source, render it straight into that folder:
+
+```sh
+qmd2pw version1.0/index.qmd -o docs/index.html
+```
+
+`docs/.nojekyll` stops GitHub Pages from running the file through Jekyll.
 
 ```yaml
 ---

@@ -11,5 +11,5 @@ build/
 dist/
 .pytest_cache/
 
-# Rendered output
-example/*.html
+# Rendered output (the published copy lives in docs/)
+version1.0/*.html
