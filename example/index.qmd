@@ -1,37 +1,30 @@
 ---
-title: "Dr. Minta Eszter"
-subtitle: "[egyetemi docens]{lang=hu}[Associate Professor]{lang=en}"
+title: "[Dr. Abari Kálmán]{lang=hu}[Dr. Kálmán Abari]{lang=en}"
+subtitle: "[egyetemi adjunktus]{lang=hu}[Assistant Professor]{lang=en}"
 description: >-
-  [Dr. Minta Eszter személyes oldala: kutatás, oktatás, publikációk.]{lang=hu}[Personal page of Dr. Eszter Minta: research, teaching and publications.]{lang=en}
+  [Dr. Abari Kálmán személyes oldala: kutatás, oktatás, publikációk.]{lang=hu}[Personal page of Dr. Kálmán Abari: research, teaching and publications.]{lang=en}
 author:
-  - name: Dr. Minta Eszter
-    email: minta.eszter@example.org
-    orcid: 0000-0000-0000-0000
+  - name: Dr. Abari Kálmán
+    email: abari.kalman@arts.unideb.hu
     affiliations:
-      - name: "[Példa Tudományegyetem]{lang=hu}[University of Példa]{lang=en}"
-        department: "[Alkalmazott Statisztika Tanszék]{lang=hu}[Department of Applied Statistics]{lang=en}"
+      - name: "[Debreceni Egyetem]{lang=hu}[University of Debrecen]{lang=en}"
+        department: "[Szociál- és Munkapszichológiai Tanszék, Pszichológiai Intézet, Bölcsészettudományi Kar]{lang=hu}[Department of Social and Work Psychology, Institute of Psychology, Faculty of Humanities]{lang=en}"
 date-modified: last-modified
 lang: hu
-image: images/profile.svg
+image: images/profile.jpg
 about:
   template: trestles
   image-shape: rounded
   links:
     - icon: envelope
       text: E-mail
-      href: mailto:minta.eszter@example.org
-    - icon: mortarboard
-      text: Google Scholar
-      href: https://example.org/scholar/minta-eszter
-    - icon: orcid
-      text: ORCID
-      href: https://orcid.org/0000-0000-0000-0000
-    - icon: github
-      text: GitHub
-      href: https://example.org/code/minta-eszter
-    - icon: file-earmark-pdf
-      text: "[Önéletrajz]{lang=hu}[CV]{lang=en}"
-      href: https://example.org/minta-eszter-cv.pdf
+      href: mailto:abari.kalman@arts.unideb.hu
+    - icon: book
+      text: MTMT
+      href: https://m2.mtmt.hu/gui2/?type=authors&mode=browse&sel=10036489
+    - icon: person-badge
+      text: "[Egyetemi profil]{lang=hu}[University profile]{lang=en}"
+      href: https://tudoster.unideb.hu/hu/szerzok/1874
 format:
   html:
     css: styles/custom.css
@@ -42,121 +35,117 @@ qmd2pw:
 ---
 
 ::: {lang="hu"}
-A Példa Tudományegyetem Alkalmazott Statisztika Tanszékének docense vagyok.
-Kutatásaim középpontjában a **többszintű modellek**, a **reprodukálható adatelemzés**
-és a statisztikaoktatás módszertana áll. Szívesen fogadok érdeklődő hallgatókat
-szakdolgozati és TDK-témákhoz.
+A Debreceni Egyetem Bölcsészettudományi Karán, a Pszichológiai Intézet
+Szociál- és Munkapszichológiai Tanszékén vagyok egyetemi adjunktus 2005 óta.
+Programtervező matematikus végzettségű vagyok, PhD-fokozatomat 2013-ban szereztem
+a Debreceni Egyetemen. Kutatásaim a **statisztikai adatelemzés**, a **beszédkutatás**
+és az **oktatás** – különösen a gamifikáció és az algoritmikus gondolkodás – területét fedik le.
 :::
 
 ::: {lang="en"}
-I am an associate professor at the Department of Applied Statistics, University of Példa.
-My research focuses on **multilevel models**, **reproducible data analysis** and the
-didactics of statistics. Students interested in thesis or research projects are always welcome.
+I have been an assistant professor at the Department of Social and Work Psychology,
+Institute of Psychology, Faculty of Humanities, University of Debrecen since 2005.
+I trained as a software engineer and mathematician, and received my PhD from the
+University of Debrecen in 2013. My research covers **statistical data analysis**,
+**speech research** and **education**, in particular gamification and algorithmic thinking.
 :::
 
 ## [Kutatás]{lang=hu}[Research]{lang=en} {#research}
 
 ::: {lang="hu"}
-### Fő kutatási területek
+Statisztika és R
+: Adatkezelés és statisztikai elemzés R-ben; fejlesztőprogramok hatásvizsgálatának
+  matematikai statisztikai háttere.
 
-- Többszintű és longitudinális modellek a társadalomtudományokban
-- Bayes-i módszerek kis mintás vizsgálatokban
-- Reprodukálható kutatási munkafolyamatok (R, Python, Quarto)
+Beszédkutatás
+: A magyar beszéd akusztikai jellemzői: formánsok, koartikuláció, szóidőtartam a spontán beszédben.
 
-### Folyamatban lévő projektek
+Gamifikáció és oktatás
+: Játékosítás az oktatásban; digitális tananyag hátrányos helyzetű tanulók nyelvtanulásához (HANNA);
+  tanulói motiváció hátrányos helyzetű régiókban.
 
-Adatvezérelt tanulástámogatás (2024–2027)
-: Hallgatói tanulási adatok elemzése a lemorzsolódás korai előrejelzésére.
-
-Nyílt statisztikai tananyagok (2025–2026)
-: Interaktív, nyílt hozzáférésű jegyzetek készítése bevezető statisztika kurzusokhoz.
+Algoritmikus készségek
+: Diákok és egyetemi hallgatók algoritmikus készségeinek mérése és fejlesztése, táblázatkezelés oktatása (Sprego).
 :::
 
 ::: {lang="en"}
-### Main research areas
+Statistics and R
+: Data management and statistical analysis in R; the statistical background of
+  evaluating development programmes.
 
-- Multilevel and longitudinal models in the social sciences
-- Bayesian methods for small-sample studies
-- Reproducible research workflows (R, Python, Quarto)
+Speech research
+: Acoustic properties of Hungarian speech: formants, coarticulation, word duration in spontaneous speech.
 
-### Ongoing projects
+Gamification and education
+: Gamification in education; a digital course supplement for language learning of
+  disadvantaged pupils (HANNA); learner motivation in low-SES regions.
 
-Data-driven learning support (2024–2027)
-: Analysing student learning data for early prediction of dropout.
-
-Open statistics course materials (2025–2026)
-: Interactive, open-access lecture notes for introductory statistics courses.
+Algorithmic skills
+: Measuring and developing the algorithmic skills of school and university students;
+  teaching spreadsheet management (Sprego).
 :::
 
 ## [Oktatás]{lang=hu}[Teaching]{lang=en} {#teaching}
 
-::: {lang="hu"}
-| Kurzus                          | Típus       | Félév       | Kód     |
-|---------------------------------|-------------|-------------|---------|
-| Bevezetés a statisztikába       | előadás     | ősz         | STAT101 |
-| Adatelemzés R-ben               | gyakorlat   | ősz, tavasz | STAT230 |
-| Többszintű modellek             | szeminárium | tavasz      | STAT412 |
-| Reprodukálható kutatás Quartóval | szeminárium | tavasz      | STAT455 |
+<!-- TODO: add the courses you teach, e.g. as a table: | Kurzus | Típus | Félév | -->
 
-A kurzusok anyagai és a vizsgakövetelmények az egyetemi tanulmányi rendszerben érhetők el.
-:::
+[Statisztikát és adatelemzést oktatok R-ben. Ehhez készült tankönyvem:]{lang=hu}[I teach statistics and data analysis in R. My textbook for this:]{lang=en}
 
-::: {lang="en"}
-| Course                           | Type     | Semester         | Code    |
-|----------------------------------|----------|------------------|---------|
-| Introduction to Statistics       | lecture  | autumn           | STAT101 |
-| Data Analysis in R               | practice | autumn, spring   | STAT230 |
-| Multilevel Models                | seminar  | spring           | STAT412 |
-| Reproducible Research with Quarto | seminar  | spring           | STAT455 |
+::: {.callout-tip}
+## [Tankönyv]{lang=hu}[Textbook]{lang=en}
 
-Course materials and exam requirements are available in the university's learning management system.
+Abari, K. (2025). *Adatkezelés és egyváltozós elemzések R-ben.* Debreceni Egyetemi Kiadó, 577 p.
+ISBN 9789636152758.
 :::
 
 ## [Publikációk]{lang=hu}[Publications]{lang=en} {#publications}
 
-[Válogatott publikációk; a teljes lista a Google Scholar-profilomon érhető el.]{lang=hu}[Selected publications; the full list is on my Google Scholar profile.]{lang=en}
+[Válogatott publikációk; a teljes lista az MTMT-ben érhető el.]{lang=hu}[Selected publications; the full list is available in MTMT.]{lang=en}
 
-1. Minta, E., & Példa, J. (2025). Multilevel models for small samples: A Bayesian perspective.
-   *Journal of Example Statistics*, 12(3), 145–167.
-2. Minta, E. (2024). Reprodukálható adatelemzés a felsőoktatásban.
-   *Példa Statisztikai Szemle*, 8(1), 22–39.
-3. Példa, J., Minta, E., & Teszt, A. (2023). Early warning indicators of student dropout.
-   *Example Journal of Learning Analytics*, 5(2), 77–95.
-4. Minta, E. (2022). *Bevezetés a többszintű modellezésbe* [Introduction to multilevel modelling].
-   Példa Egyetemi Kiadó.
+### [Könyvek]{lang=hu}[Books]{lang=en}
 
-## [Hallgatóknak]{lang=hu}[For students]{lang=en} {#students}
+1. Abari, K. (2025). *Adatkezelés és egyváltozós elemzések R-ben.* Debreceni Egyetemi Kiadó.
+2. Abari, K. (2025). *A játékos én: a gamifikáció hatalma.* Oriold és Társai.
+3. Polonyi, T. É., Abari, K., & Kiss, T. (2020). *Válságok megelőzése és kezelése.* Oriold és Társai.
+4. Polonyi, T. É., Abari, K., & Szabó, F. (2019). *Innováció az oktatásban.* Oriold és Társai.
 
-::: {.callout-note}
-## [Fogadóóra]{lang=hu}[Office hours]{lang=en}
+### [Folyóiratcikkek és konferenciaközlemények]{lang=hu}[Articles and conference papers]{lang=en}
 
-[Szerda 10:00–12:00, B épület 214-es szoba, illetve előzetes egyeztetés alapján online.]{lang=hu}[Wednesdays 10:00–12:00, Building B, Room 214, or online by appointment.]{lang=en}
-:::
+1. Gósy, M., Bahr, R. H., & Abari, K. (2026). Word duration in the spontaneous speech of an
+   agglutinating language. *Journal of Connected Speech*, 1(3), 286–313.
+2. Polonyi, T. É., Balajthy, D., Abari, K., Szabó, F., Páskuné Kiss, J., & Buda, M. (2023).
+   Learners' motivation at schools in low SES regions in Hungary.
+   *International Journal of Inclusive Education*, 1–16.
+3. Szabó, F., Abari, K., Balajthy, D., & Polonyi, T. É. (2022). HANNA – A gamified digital
+   supplementary course material developed to help socially disadvantaged pupils learn English.
+   *Teaching English with Technology*, 22(2), 51–68.
+4. Sebestyén, K., Csapó, G., Csernoch, M., & Abari, K. (2022). Measuring the algorithmic skills
+   of students working with low- and high-mathability programming approaches.
+   *Acta Polytechnica Hungarica*, 19(1), 93–112.
+5. Gósy, M., & Abari, K. (2021). The interaction of word complexity and word duration in an
+   agglutinative language. In *Proceedings of Interspeech 2021* (pp. 2636–2640).
+6. Csapó, G., Sebestyén, K., Csernoch, M., & Abari, K. (2021). Case study: Developing long-term
+   knowledge with Sprego. *Education and Information Technologies*, 26(1), 965–982.
+7. Csapó, G., Csernoch, M., & Abari, K. (2020). Sprego: Case study on the effectiveness of teaching
+   spreadsheet management with schema construction. *Education and Information Technologies*,
+   25(3), 1585–1605.
+8. Abari, K., & Olaszy, G. (2016). A magyar beszéd formánslenyomatai és a koartikuláció tágabb
+   hatóköre. *Beszédkutatás*, 24, 89–102.
 
-:::: {.columns}
-::: {.column width="50%"}
-### [Szakdolgozati témák]{lang=hu}[Thesis topics]{lang=en}
-
-- [Hiányzó adatok kezelése longitudinális vizsgálatokban]{lang=hu}[Handling missing data in longitudinal studies]{lang=en}
-- [Bayes-i modellek összehasonlítása kis mintákon]{lang=hu}[Comparing Bayesian models on small samples]{lang=en}
-- [Tanulási analitika a felsőoktatásban]{lang=hu}[Learning analytics in higher education]{lang=en}
-:::
-
-::: {.column width="50%"}
-### [Konzultáció]{lang=hu}[Consultation]{lang=en}
-
-[Témavezetést elsősorban statisztika és adattudomány szakos hallgatóknak vállalok. Jelentkezés előtt érdemes átnézni a fenti témákat, és egy rövid, egyoldalas tervvel megkeresni e-mailben.]{lang=hu}[I mainly supervise students in statistics and data science. Before applying, please look through the topics above and email me a short, one-page proposal.]{lang=en}
-:::
-::::
+<!-- TODO: add a "Hallgatóknak / For students" section (office hours, thesis topics). -->
 
 ## [Elérhetőség]{lang=hu}[Contact]{lang=en} {#contact}
 
+<!-- TODO: add the office address (building, room). -->
+
 ::: {lang="hu"}
-**Cím:** Példa Tudományegyetem, Alkalmazott Statisztika Tanszék, B épület 214.\
-**E-mail:** <minta.eszter@example.org>
+**E-mail:** <abari.kalman@arts.unideb.hu>\
+**Munkahely:** Debreceni Egyetem, Bölcsészettudományi Kar, Pszichológiai Intézet,
+Szociál- és Munkapszichológiai Tanszék
 :::
 
 ::: {lang="en"}
-**Address:** University of Példa, Department of Applied Statistics, Building B, Room 214\
-**Email:** <minta.eszter@example.org>
+**Email:** <abari.kalman@arts.unideb.hu>\
+**Affiliation:** University of Debrecen, Faculty of Humanities, Institute of Psychology,
+Department of Social and Work Psychology
 :::

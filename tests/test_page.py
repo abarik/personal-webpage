@@ -20,8 +20,8 @@ def test_example_renders_self_contained(tmp_path):
     assert 'html[data-lang="hu"] body [lang|="en"]' in html
     assert '<section id="research" class="pw-section">' in html
     assert '<a href="#research"><span lang="hu">Kutatás</span><span lang="en">Research</span></a>' in html
-    assert 'class="callout callout-note"' in html
-    assert 'src="data:image/svg+xml;base64,' in html
+    assert 'class="callout callout-' in html
+    assert 'class="pw-avatar pw-avatar--rounded" src="data:image/' in html
     assert "<link" not in html  # embed-resources: true
     assert "--pw-accent: #8a1538" in html  # custom CSS inlined
 
