@@ -24,6 +24,8 @@ def test_example_renders_self_contained(tmp_path):
     assert 'class="pw-avatar pw-avatar--rounded" src="data:image/' in html
     assert "<link" not in html  # embed-resources: true
     assert "--pw-accent: #8a1538" in html  # custom CSS inlined
+    assert '<h2><span lang="hu">Kutatás</span><span lang="en">Research</span></h2>\n<div class="pw-section-body">' in html
+    assert 'url("data:font/woff2;base64,' in html  # web fonts embedded from custom CSS
 
 
 def test_linked_css_and_theme_files(tmp_path):

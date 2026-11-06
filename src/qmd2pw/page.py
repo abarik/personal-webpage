@@ -324,7 +324,7 @@ class _Page:
             body = r.blocks(sec.body)
             section_html.append(
                 f'<section{sec.attrs.to_html(extra_classes=["pw-section"])}>\n'
-                f"<h2>{heading}</h2>\n{body}</section>"
+                f'<h2>{heading}</h2>\n<div class="pw-section-body">\n{body}</div>\n</section>'
             )
             if "unlisted" not in sec.attrs.classes:
                 lang = sec.attrs.pairs.get("lang")

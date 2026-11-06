@@ -13,3 +13,8 @@ dist/
 
 # Rendered output (the published copy lives in docs/)
 version1.0/*.html
+
+# Third-party Claude skills (downloaded locally, not part of the project)
+.claude/skills/
+.claude/*.tgz
+.claude/_to_delete/

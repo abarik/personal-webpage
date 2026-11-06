@@ -1,18 +1,85 @@
-/* Example customisation, loaded after the qmd2pw base style
-   (format: html: css: styles/custom.css). */
+/* Abari Kálmán's page: typography and palette, loaded after the qmd2pw base style
+   (format: html: css: styles/custom.css).
+
+   Fonts (SIL Open Font License, see fonts/OFL-*.txt), subset to Latin + Hungarian:
+   - Newsreader (Production Type): display and reading serif, with an optical-size axis.
+   - Hanken Grotesk: body and interface sans. */
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-var.woff2") format("woff2");
+  font-weight: 350 650;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-italic-var.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("fonts/hanken-grotesk-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
+  --pw-font-heading: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --pw-font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Warm paper, ink and a deep Debrecen burgundy. */
+  --pw-bg: #f8f6f1;
+  --pw-surface: #fffefb;
+  --pw-surface-alt: #efebe3;
+  --pw-text: #1d1a17;
+  --pw-muted: #635d56;
+  --pw-border: #e2ddd3;
   --pw-accent: #8a1538;
-  --pw-accent-soft: #f6e8ed;
+  --pw-accent-soft: #f4e6ea;
   --pw-link: #8a1538;
   --pw-link-hover: #5e0e26;
+  --pw-tip: #8a1538;
 }
 
 html[data-theme="dark"] {
+  --pw-bg: #151312;
+  --pw-surface: #1d1a18;
+  --pw-surface-alt: #27231f;
+  --pw-text: #ece7e1;
+  --pw-muted: #a9a198;
+  --pw-border: #322d29;
   --pw-accent: #e88aa5;
   --pw-accent-soft: #3a1e27;
   --pw-link: #f0a3b9;
   --pw-link-hover: #f8cbd8;
+  --pw-tip: #e88aa5;
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --pw-bg: #151312;
+    --pw-surface: #1d1a18;
+    --pw-surface-alt: #27231f;
+    --pw-text: #ece7e1;
+    --pw-muted: #a9a198;
+    --pw-border: #322d29;
+    --pw-accent: #e88aa5;
+    --pw-accent-soft: #3a1e27;
+    --pw-link: #f0a3b9;
+    --pw-link-hover: #f8cbd8;
+    --pw-tip: #e88aa5;
+  }
 }
 
-.pw-title { letter-spacing: -0.015em; }
+/* Newsreader's optical sizes: tight, high-contrast cuts for display, sturdier for text. */
+.pw-title { font-variation-settings: "opsz" 72; font-weight: 450; }
+.pw-section > h2 { font-variation-settings: "opsz" 60; }
+h3, .pw-section-body dt { font-variation-settings: "opsz" 36; }
+.pw-intro p, blockquote { font-variation-settings: "opsz" 20; }
+.pw-brand { font-variation-settings: "opsz" 24; }
+
+body { font-size: 1.0625rem; }
+html[data-theme="dark"] body { letter-spacing: 0.005em; }
