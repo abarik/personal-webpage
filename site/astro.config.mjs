@@ -2,12 +2,12 @@
 import { defineConfig } from "astro/config";
 import rehypeSections from "./src/lib/rehype-sections.mjs";
 
-// GitHub Pages serves the repository's docs/ folder at
-// https://abarik.github.io/personal-webpage/, so the build goes to ../docs
-// and every URL is prefixed with the repository name.
+// GitHub Pages serves the repository's docs/ folder on the custom domain
+// https://kalman.abari.hu/ (public/CNAME is copied into docs/ on every build,
+// so the domain setting survives the build emptying docs/).
 export default defineConfig({
-  site: "https://abarik.github.io",
-  base: "/personal-webpage",
+  site: "https://kalman.abari.hu",
+  base: "/",
   trailingSlash: "always",
   outDir: "../docs",
   build: { format: "directory" },

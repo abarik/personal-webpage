@@ -2,13 +2,13 @@
 
 Dr. Abari Kálmán kétnyelvű (magyar/angol), többoldalas weboldala.
 A lefordított oldal a repó `docs/` mappájába kerül, ezt publikálja a GitHub Pages:
-<https://abarik.github.io/personal-webpage/>
+<https://kalman.abari.hu/> (a domain a `public/CNAME` fájlban van)
 
 ## Parancsok (a `site/` mappában)
 
 ```sh
 npm install        # első alkalommal
-npm run dev        # helyi előnézet: http://localhost:4321/personal-webpage/
+npm run dev        # helyi előnézet: http://localhost:4321/
 npm run build      # fordítás a ../docs mappába (ezt kell commitolni)
 npm run preview    # a lefordított oldal kipróbálása
 ```
