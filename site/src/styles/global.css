@@ -674,6 +674,7 @@ html.pw-vt-theme::view-transition-new(root) { animation: pw-vt-circle 650ms var(
 }
 
 /* Courses page: one row per course, materials beneath. */
+.pw-group-intro { margin: 0 0 1.25rem; color: var(--pw-muted); }
 .pw-course-list { margin: 0; padding: 0; list-style: none; }
 .pw-course-list > li { padding: 0.9rem 0; border-top: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }
 .pw-course-list > li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }

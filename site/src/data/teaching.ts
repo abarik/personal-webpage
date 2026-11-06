@@ -8,7 +8,7 @@ export interface Course {
   /** Materials, shown on the courses page. */
   links?: { label: T; href: string }[];
 }
-export interface CourseGroup { id: string; title: T; courses: Course[] }
+export interface CourseGroup { id: string; title: T; description: T; courses: Course[] }
 
 const BA: T = { hu: "BA", en: "BA" };
 const MA: T = { hu: "MA", en: "MA" };
@@ -20,7 +20,12 @@ export const courseGroups: CourseGroup[] = [
   {
     id: "statistics",
     title: { hu: "Statisztika", en: "Statistics" },
+    description: {
+      hu: "A pszichológiai kutatás nyelve: hogyan írjuk le az adatokat, és mikor vonhatunk le belőlük megbízható következtetést. A matematikai alapoktól a paraméteres próbákon át a többváltozós módszerekig vezetem végig a hallgatókat, R-ben és jamoviban, magyarul és angolul.",
+      en: "The language of psychological research: how to describe data, and when we can draw reliable conclusions from it. I guide students from the mathematical foundations through parametric tests to multivariate methods, in R and jamovi, in Hungarian and in English.",
+    },
     courses: [
+      { name: { hu: "Matematikai alapok", en: "Mathematical Foundations" }, tags: [BA] },
       {
         name: { hu: "Pszichológiai statisztika 1. (paraméteres eljárások)", en: "Psychological Statistics 1 (parametric methods)" },
         tags: [BA],
@@ -37,6 +42,10 @@ export const courseGroups: CourseGroup[] = [
   {
     id: "computing",
     title: { hu: "Számítástechnika", en: "Computing" },
+    description: {
+      hu: "A tudományos munka digitális alapjai: táblázatkezelés, hivatkozáskezelés és a könyvtári források használata. Célom, hogy a hallgatók magabiztosan és hatékonyan használják a számítógépet a tanulmányaik során.",
+      en: "The digital foundations of academic work: spreadsheets, reference management and the use of library resources. My aim is for students to use the computer confidently and efficiently throughout their studies.",
+    },
     courses: [
       {
         name: { hu: "Számítástechnika 1.", en: "Computing 1" },
@@ -53,11 +62,19 @@ export const courseGroups: CourseGroup[] = [
   {
     id: "ai",
     title: { hu: "Mesterséges intelligencia", en: "Artificial intelligence" },
+    description: {
+      hu: "Hogyan működnek a mai MI-rendszerek, és mit jelentenek a pszichológia számára? A gépi tanulás alapjaitól a nagy nyelvi modellekig tekintjük át a területet, a lehetőségekkel és a korlátokkal együtt.",
+      en: "How do today's AI systems work, and what do they mean for psychology? We survey the field from the basics of machine learning to large language models, with its possibilities and limitations.",
+    },
     courses: [{ name: { hu: "Mesterséges intelligencia", en: "Artificial Intelligence" }, tags: [MA] }],
   },
   {
     id: "networks",
     title: { hu: "Társas hálózatok", en: "Social networks" },
+    description: {
+      hu: "A kapcsolatok szerkezete is sokat elárul: ki kivel áll kapcsolatban, ki van a hálózat közepén, és hogyan terjed benne az információ. A tárgy a társas hálózatok elemzésének fogalmait és módszereit mutatja be, gyakorlati példákon.",
+      en: "The structure of relationships says a lot: who is connected to whom, who sits at the centre of a network, and how information spreads through it. The course introduces the concepts and methods of social network analysis through practical examples.",
+    },
     courses: [
       {
         name: { hu: "Társas hálózatok elemzése", en: "Social Network Analysis" },
@@ -66,10 +83,13 @@ export const courseGroups: CourseGroup[] = [
     ],
   },
   {
-    id: "other",
-    title: { hu: "Egyéb tárgyak", en: "Other courses" },
+    id: "knowledge-space",
+    title: { hu: "Tudástérelmélet", en: "Knowledge space theory" },
+    description: {
+      hu: "A tudástérelmélet azt modellezi, hogyan épülnek egymásra az ismeretek egy tárgyterületen, és ebből hogyan állapítható meg pontosan, mit tud valaki. A PhD-kurzuson a módszer gyakorlati alkalmazásait vesszük sorra.",
+      en: "Knowledge space theory models how pieces of knowledge build on each other within a subject, and how this lets us determine precisely what someone knows. The PhD course works through practical applications of the method.",
+    },
     courses: [
-      { name: { hu: "Matematikai alapok", en: "Mathematical Foundations" }, tags: [BA] },
       { name: { hu: "Tudástérelmélet a gyakorlatban", en: "Knowledge Space Theory in Practice" }, tags: [PHD] },
     ],
   },
