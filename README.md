@@ -1,5 +1,8 @@
 # qmd2pw — Quarto Markdown to PersonalWebPage
 
+> **Note:** the published website (`docs/`) is now built from the Astro project in [`site/`](site/README.md).
+> `qmd2pw` remains available as a stand-alone single-page tool.
+
 `qmd2pw` turns a standalone [Quarto](https://quarto.org) document (`.qmd`) into a
 single-page personal website for university lecturers. The page is bilingual
 (Hungarian and English by default), has light and dark themes, and you can restyle

@@ -1,0 +1,15 @@
+---
+// A page whose whole body is Markdown (teaching, contact, …).
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import { type Lang, type PageId } from "../lib/i18n";
+import { loadPage } from "../lib/page";
+
+interface Props { lang: Lang; id: PageId }
+const { lang, id } = Astro.props;
+const page = await loadPage(lang, id);
+---
+<Base lang={lang} page={id} title={page.title} description={page.description}>
+  <PageHead title={page.title} lead={page.lead} />
+  <page.Content />
+</Base>

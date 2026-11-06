@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import PubList from "../components/PubList.astro";
+import { ui, type Lang } from "../lib/i18n";
+import { books, papers } from "../lib/bib";
+import { loadPage } from "../lib/page";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const page = await loadPage(lang, "publications");
+---
+<Base lang={lang} page="publications" title={page.title} description={page.description}>
+  <PageHead title={page.title} lead={page.lead} />
+  <section class="pw-section" id="books">
+    <h2>{t.books}</h2>
+    <div class="pw-section-body"><PubList items={books} /></div>
+  </section>
+  <section class="pw-section" id="papers">
+    <h2>{t.articles}</h2>
+    <div class="pw-section-body"><PubList items={papers} /></div>
+  </section>
+  <page.Content />
+</Base>

@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import PubList from "../components/PubList.astro";
+import portrait from "../assets/profile.jpg";
+import { href, ui, links, type Lang } from "../lib/i18n";
+import { research } from "../data/research";
+import { publications } from "../lib/bib";
+import { loadPage } from "../lib/page";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const page = await loadPage(lang, "home");
+---
+<Base lang={lang} page="home" title={page.title} description={page.description}>
+  <section class="pw-hero" aria-labelledby="pw-name">
+    <Image class="pw-avatar" src={portrait} alt={t.photoAlt} widths={[240, 480]} sizes="(max-width: 760px) 8.5rem, 15rem" loading="eager" fetchpriority="high" />
+    <div class="pw-hero-text">
+      <h1 class="pw-title" id="pw-name">{t.name}</h1>
+      <p class="pw-subtitle">{t.role}</p>
+      <p class="pw-affiliation">{t.affiliation}</p>
+      <ul class="pw-links">
+        <li><a href={`mailto:${links.email}`}><Icon name="mail" /><span>E-mail</span></a></li>
+        <li><a href={links.mtmt}><Icon name="book" /><span>MTMT</span></a></li>
+        <li><a href={links.profile}><Icon name="person" /><span>{t.profileLink}</span></a></li>
+      </ul>
+      <div class="pw-intro"><page.Content /></div>
+    </div>
+  </section>
+
+  <section class="pw-section" id="areas">
+    <h2>{t.researchAreas}</h2>
+    <div class="pw-section-body pw-section-body--wide">
+      <ul class="pw-areas">
+        {research.map((a) => (
+          <li class="pw-area">
+            <h3><a href={`${href("research", lang)}#${a.id}`}>{a.title[lang]}</a></h3>
+            <p>{a.text[lang]}</p>
+          </li>
+        ))}
+      </ul>
+      <a class="pw-more" href={href("research", lang)}>{t.moreResearch}<Icon name="arrow" /></a>
+    </div>
+  </section>
+
+  <section class="pw-section" id="recent">
+    <h2>{t.recentPublications}</h2>
+    <div class="pw-section-body">
+      <PubList items={publications.slice(0, 4)} />
+      <a class="pw-more" href={href("publications", lang)}>{t.allPublications}<Icon name="arrow" /></a>
+    </div>
+  </section>
+</Base>

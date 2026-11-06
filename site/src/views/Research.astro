@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import { type Lang } from "../lib/i18n";
+import { research } from "../data/research";
+import { loadPage } from "../lib/page";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const page = await loadPage(lang, "research");
+---
+<Base lang={lang} page="research" title={page.title} description={page.description}>
+  <PageHead title={page.title} lead={page.lead} />
+  {research.map((a) => (
+    <section class="pw-section" id={a.id}>
+      <h2>{a.title[lang]}</h2>
+      <div class="pw-section-body"><p>{a.text[lang]}</p></div>
+    </section>
+  ))}
+  <page.Content />
+</Base>

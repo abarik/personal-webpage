@@ -1,0 +1,13 @@
+---
+import type { Publication } from "../lib/bib";
+interface Props { items: Publication[] }
+const { items } = Astro.props;
+---
+<ol class="pw-pubs">
+  {items.map((p, i) => (
+    <li class={i > 0 && items[i - 1].year === p.year ? "pw-same-year" : undefined}>
+      <span class="pw-pub-year">{p.year}</span>
+      <span class="pw-pub" set:html={p.html} />
+    </li>
+  ))}
+</ol>
