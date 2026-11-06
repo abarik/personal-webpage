@@ -40,7 +40,7 @@ export const ui = {
     affiliation: "Szociál- és Munkapszichológiai Tanszék, Pszichológiai Intézet, Bölcsészettudományi Kar, Debreceni Egyetem",
     pages: {
       home: "Főoldal", research: "Kutatás", teaching: "Oktatás", publications: "Publikációk", contact: "Elérhetőség",
-      "teaching-notes": "Jegyzetek", "teaching-reading": "Ajánlott irodalom",
+      "teaching-notes": "Jegyzetek", "teaching-reading": "Ajánlott irodalom kurzusokhoz",
     },
     subnavLabels: { teaching: "Videók" } as Partial<Record<PageId, string>>,
     subnavAria: "Az oktatás aloldalai",
@@ -77,7 +77,7 @@ export const ui = {
     affiliation: "Department of Social and Work Psychology, Institute of Psychology, Faculty of Humanities, University of Debrecen",
     pages: {
       home: "Home", research: "Research", teaching: "Teaching", publications: "Publications", contact: "Contact",
-      "teaching-notes": "Notes", "teaching-reading": "Reading list",
+      "teaching-notes": "Notes", "teaching-reading": "Reading list by course",
     },
     subnavLabels: { teaching: "Videos" } as Partial<Record<PageId, string>>,
     subnavAria: "Teaching pages",

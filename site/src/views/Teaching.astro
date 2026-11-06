@@ -1,5 +1,6 @@
 ---
 // Teaching: the "Videos" tab. The heading stays "Teaching" on every teaching tab.
+import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
 import SubNav from "../components/SubNav.astro";
@@ -22,7 +23,9 @@ const page = await loadPage(lang, "teaching");
         {videos.map((v) => (
           <li class="pw-video" id={v.id}>
             <a class="pw-video-thumb" href={v.href} aria-hidden="true" tabindex="-1">
-              {v.thumb ? (
+              {v.image ? (
+                <Image src={v.image} alt="" widths={[400, 800]} sizes="(max-width: 640px) 100vw, 24rem" loading="lazy" />
+              ) : v.thumb ? (
                 <img src={`https://i.ytimg.com/vi/${v.thumb}/mqdefault.jpg`} alt="" width="320" height="180" loading="lazy" decoding="async" />
               ) : (
                 <span class="pw-video-tile">{v.title[lang]}</span>

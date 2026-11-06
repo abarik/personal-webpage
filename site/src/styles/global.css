@@ -757,7 +757,7 @@ html[data-theme="dark"] .pw-video-thumb img { filter: brightness(0.9); }
 .pw-video-play {
   position: absolute;
   right: 0.75rem;
-  bottom: 0.75rem;
+  top: 0.75rem;
   display: grid;
   place-items: center;
   width: 2.5rem;

@@ -1,4 +1,6 @@
+import type { ImageMetadata } from "astro";
 import type { Lang } from "../lib/i18n";
+import referenceManagersSlide from "../assets/hivatkozaskezelok.jpg";
 
 type T = Record<Lang, string>;
 export interface VideoSeries {
@@ -9,6 +11,8 @@ export interface VideoSeries {
   href: string;
   /** A YouTube video id from the series; its thumbnail is shown on the card. */
   thumb?: string;
+  /** A local still instead of a YouTube thumbnail (e.g. the series' title slide). */
+  image?: ImageMetadata;
   /** Further materials next to the videos (e.g. a PDF). */
   extra?: { label: T; href: string }[];
 }
@@ -23,6 +27,7 @@ export const videos: VideoSeries[] = [
       en: "A video series on using reference management software, for the Computing 1 course, with downloadable notes.",
     },
     href: "https://www.youtube.com/playlist?list=PLnmeQHnHYqv5jzYnu8i2Kh46Ti5g1bVCz",
+    image: referenceManagersSlide,
     extra: [{ label: { hu: "Jegyzet (PDF)", en: "Notes (PDF)" }, href: "https://abarik.github.io/statisztika/files/hivatkozaskezelok.pdf" }],
   },
   {
