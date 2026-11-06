@@ -1,0 +1,42 @@
+---
+// Courses grouped by subject. "compact" (home page): names only, in a grid.
+// Full (courses page): one section per group, with tags and materials.
+import { courseGroups } from "../data/teaching";
+import type { Lang } from "../lib/i18n";
+interface Props { lang: Lang; compact?: boolean }
+const { lang, compact = false } = Astro.props;
+---
+{compact ? (
+  <ul class="pw-areas pw-areas--three pw-courses">
+    {courseGroups.map((g) => (
+      <li class="pw-area">
+        <h3>{g.title[lang]}</h3>
+        <ul class="pw-course-names">
+          {g.courses.map((c) => (
+            <li>{c.name[lang]}{c.tags?.length ? <span class="pw-tags">{c.tags.map((t) => <span class="pw-tag">{t[lang]}</span>)}</span> : null}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+) : (
+  courseGroups.map((g) => (
+    <section class="pw-section" id={g.id}>
+      <h2>{g.title[lang]}</h2>
+      <div class="pw-section-body">
+        <ul class="pw-course-list">
+          {g.courses.map((c) => (
+            <li>
+              <p class="pw-course-name">{c.name[lang]}{c.tags?.length ? <span class="pw-tags">{c.tags.map((t) => <span class="pw-tag">{t[lang]}</span>)}</span> : null}</p>
+              {c.links?.length ? (
+                <ul class="pw-course-links">
+                  {c.links.map((l) => <li><a href={l.href}>{l.label[lang]}</a></li>)}
+                </ul>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))
+)}

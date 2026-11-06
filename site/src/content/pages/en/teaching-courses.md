@@ -4,21 +4,7 @@ description: My courses and their materials – videos, notes and worked example
 lead: The courses I teach and their materials. The materials are in Hungarian.
 ---
 
-## Computing 1
-
-- [Reference managers – video series](https://www.youtube.com/playlist?list=PLnmeQHnHYqv5jzYnu8i2Kh46Ti5g1bVCz)
-- [Reference managers – notes (PDF)](https://abarik.github.io/statisztika/files/hivatkozaskezelok.pdf)
-
-## Psychological Statistics 1
-
-Parametric methods.
-
-- [Worked examples of statistical tests](https://abarik.github.io/stat1_kurzus/)
-
-## Further courses
-
-- Computing and Library Skills
-- Mathematical Foundations
+<!-- The course list lives in src/data/teaching.ts -->
 
 ## For all courses
 

@@ -4,21 +4,7 @@ description: Kurzusaim és a hozzájuk tartozó anyagok – videók, jegyzetek, 
 lead: Az általam oktatott kurzusok és a hozzájuk tartozó anyagok.
 ---
 
-## Számítástechnika 1.
-
-- [Hivatkozáskezelők – videósorozat](https://www.youtube.com/playlist?list=PLnmeQHnHYqv5jzYnu8i2Kh46Ti5g1bVCz)
-- [Hivatkozáskezelők – jegyzet (PDF)](https://abarik.github.io/statisztika/files/hivatkozaskezelok.pdf)
-
-## Pszichológiai statisztika 1.
-
-Paraméteres eljárások.
-
-- [Példák próbák végrehajtására](https://abarik.github.io/stat1_kurzus/)
-
-## További kurzusok
-
-- Számítástechnika és könyvtárismeret
-- Matematikai alapok
+<!-- A kurzusok listája: src/data/teaching.ts -->
 
 ## Minden kurzushoz
 

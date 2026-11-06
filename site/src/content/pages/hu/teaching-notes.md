@@ -7,6 +7,7 @@ lead: Az általam készített R jegyzetek, feladatgyűjtemények és tesztek.
 ## Jegyzetek 2020-tól
 
 - [Többváltozós statisztika jamovi-ban és R-ben](https://abarik.github.io/tsjr/)
+- [Társas hálózatok elemzése](https://abarik.github.io/tarsas_halozatok_elemzese_2023_24_1/)
 - [Példák próbák végrehajtására](https://abarik.github.io/stat1_kurzus/)
 - [Adatkezelés és egyváltozós elemzések R-ben](https://abarik.github.io/aeer/)
 - [Basic R](https://abarik.github.io/basicr_2020_21_2/)

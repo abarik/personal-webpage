@@ -7,6 +7,7 @@ lead: R notes, exercise collections and tests I have written. The materials are 
 ## Notes since 2020
 
 - [Multivariate statistics in jamovi and R](https://abarik.github.io/tsjr/)
+- [Social network analysis](https://abarik.github.io/tarsas_halozatok_elemzese_2023_24_1/)
 - [Worked examples of statistical tests](https://abarik.github.io/stat1_kurzus/)
 - [Data management and univariate analyses in R](https://abarik.github.io/aeer/)
 - [Basic R](https://abarik.github.io/basicr_2020_21_2/)

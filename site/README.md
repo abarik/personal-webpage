@@ -19,6 +19,7 @@ npm run preview    # a lefordított oldal kipróbálása
 |---|---|
 | Oldalszövegek (cím, leírás, bevezető, törzs) | `src/content/pages/hu/*.md`, `src/content/pages/en/*.md` |
 | Kutatási területek | `src/data/research.ts` |
+| Tárgyak csoportokban (főoldal és Kurzusok oldal), anyagaikkal | `src/data/teaching.ts` |
 | Publikációk (BibTeX, APA formában jelennek meg) | `src/data/publications.bib` |
 | Név, beosztás, felületi szövegek, linkek, oldalak útvonalai | `src/lib/i18n.ts` |
 | Megjelenés (színek, betűk, mozgás) | `src/styles/global.css` |

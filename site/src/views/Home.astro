@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
 import PubList from "../components/PubList.astro";
+import CourseGroups from "../components/CourseGroups.astro";
 import portrait from "../assets/profile.jpg";
 import { href, ui, links, type Lang } from "../lib/i18n";
 import { research } from "../data/research";
@@ -42,6 +43,14 @@ const page = await loadPage(lang, "home");
         ))}
       </ul>
       <a class="pw-more" href={href("research", lang)}>{t.moreResearch}<Icon name="arrow" /></a>
+    </div>
+  </section>
+
+  <section class="pw-section" id="teaching">
+    <h2>{t.teaching}</h2>
+    <div class="pw-section-body pw-section-body--wide">
+      <CourseGroups lang={lang} compact />
+      <a class="pw-button" href={href("teaching", lang)}>{t.teachingDetails}<Icon name="arrow" /></a>
     </div>
   </section>
 

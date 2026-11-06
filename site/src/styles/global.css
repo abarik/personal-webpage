@@ -654,3 +654,57 @@ html.pw-vt-theme::view-transition-new(root) { animation: pw-vt-circle 650ms var(
 .pw-area-arrow { width: 1rem; height: 1rem; margin-left: 0.4rem; vertical-align: -0.1em; color: var(--pw-accent); transition: transform var(--pw-dur) var(--pw-ease-out); }
 @media (hover: hover) and (pointer: fine) { .pw-area h3 a:hover .pw-area-arrow { transform: translateX(3px); } }
 @media (min-width: 960px) { .pw-areas--links { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Course groups (home page): names as a quiet list under each subject. */
+@media (min-width: 960px) { .pw-areas--three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.pw-course-names { margin: 0.6rem 0 0; padding: 0; list-style: none; }
+.pw-course-names li { margin: 0; padding: 0.2rem 0; color: var(--pw-muted); line-height: 1.5; }
+.pw-tags { display: inline-flex; gap: 0.3rem; margin-left: 0.45rem; vertical-align: 0.1em; }
+.pw-tag {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--pw-border);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--pw-muted);
+  white-space: nowrap;
+}
+
+/* Courses page: one row per course, materials beneath. */
+.pw-course-list { margin: 0; padding: 0; list-style: none; }
+.pw-course-list > li { padding: 0.9rem 0; border-top: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }
+.pw-course-list > li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }
+.pw-course-name { margin: 0; font-weight: 600; }
+.pw-course-links { margin: 0.35rem 0 0; padding: 0; list-style: none; }
+.pw-course-links li { margin: 0.2rem 0 0; }
+.pw-course-links a { font-size: 0.97rem; }
+.pw-course-links a[href^="http"]::after { content: "\2009↗"; font-size: 0.85em; color: var(--pw-muted); }
+
+/* The one button-shaped link: a calm outlined pill that fills on hover. */
+.pw-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  margin-top: 2rem;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid var(--pw-accent);
+  border-radius: 999px;
+  color: var(--pw-accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    transform var(--pw-dur-fast) var(--pw-ease-out),
+    background-color var(--pw-dur) var(--pw-ease),
+    color var(--pw-dur) var(--pw-ease);
+}
+.pw-button svg { width: 1rem; height: 1rem; transition: transform var(--pw-dur) var(--pw-ease-out); }
+.pw-button:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .pw-button:hover { background: var(--pw-accent); color: var(--pw-bg); }
+  .pw-button:hover svg { transform: translateX(3px); }
+}
