@@ -28,6 +28,9 @@ npm run preview    # a lefordított oldal kipróbálása
 írd meg a két Markdown-fájlt, és hozd létre a két útvonalfájlt a `src/pages/` alatt
 (minta: `src/pages/oktatas/index.astro` és `src/pages/en/teaching/index.astro`).
 
+Aloldal (pl. az Oktatás alatt): a `parent` és a `subnav` listában is szerepeljen (`src/lib/i18n.ts`);
+így a főmenüben a szülőoldal marad kiemelve, és megjelenik az aloldalak fülsora.
+
 A Markdown-oldalakon minden `## Cím` külön szakasz lesz (bal oldali címoszlop, görgetéskor megjelenés).
 
 ## Dizájnirány

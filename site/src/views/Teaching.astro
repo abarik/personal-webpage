@@ -1,0 +1,38 @@
+---
+// Teaching overview: introduction, the subpages as cards, then the Markdown body.
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import SubNav from "../components/SubNav.astro";
+import Icon from "../components/Icon.astro";
+import { href, subnav, ui, type Lang } from "../lib/i18n";
+import { getEntry } from "astro:content";
+import { loadPage } from "../lib/page";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const page = await loadPage(lang, "teaching");
+const children = (subnav.teaching ?? []).filter((id) => id !== "teaching");
+const cards = await Promise.all(children.map(async (id) => {
+  const entry = await getEntry("pages", `${lang}/${id}`);
+  return { id, title: t.pages[id], text: entry?.data.description ?? "" };
+}));
+---
+<Base lang={lang} page="teaching" title={page.title} description={page.description}>
+  <PageHead title={page.title} lead={page.lead} />
+  <SubNav lang={lang} page="teaching" />
+  <section class="pw-section" id="materials">
+    <h2>{t.teachingMaterials}</h2>
+    <div class="pw-section-body pw-section-body--wide">
+      <ul class="pw-areas pw-areas--links">
+        {cards.map((c) => (
+          <li class="pw-area">
+            <h3><a href={href(c.id, lang)}>{c.title}<Icon name="arrow" class="pw-area-arrow" /></a></h3>
+            <p>{c.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <page.Content />
+</Base>

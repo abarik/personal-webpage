@@ -1,14 +1,12 @@
 ---
 title: Oktatás
-description: Dr. Abari Kálmán oktatási tevékenysége – statisztika és adatelemzés R-ben.
-lead: Statisztika és adatelemzés R-ben – kurzusok, tananyagok és a hozzájuk készült tankönyv.
+description: Dr. Abari Kálmán oktatási anyagai – statisztika és adatelemzés R-ben, kurzusok, jegyzetek, ajánlott irodalom.
+lead: Statisztikát és adatelemzést oktatok R-ben; több mint tíz éve veszek részt az R statisztikai programcsomag hazai oktatásában.
 ---
 
-<!-- TODO: kurzusok listája (név, típus, félév), hallgatóknak szóló információk. -->
+## Tankönyv
 
-## Statisztika és adatelemzés R-ben
-
-Statisztikát és adatelemzést oktatok R-ben. Ehhez készült tankönyvem:
+A kurzusaimhoz készült tankönyvem:
 
 <div class="callout" role="note">
 <div class="callout-title">Tankönyv</div>

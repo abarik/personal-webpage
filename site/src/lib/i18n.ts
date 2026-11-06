@@ -6,6 +6,9 @@ export const routes = {
   home: { hu: "/", en: "/en/" },
   research: { hu: "/kutatas/", en: "/en/research/" },
   teaching: { hu: "/oktatas/", en: "/en/teaching/" },
+  "teaching-courses": { hu: "/oktatas/kurzusok/", en: "/en/teaching/courses/" },
+  "teaching-notes": { hu: "/oktatas/jegyzetek/", en: "/en/teaching/notes/" },
+  "teaching-reading": { hu: "/oktatas/irodalom/", en: "/en/teaching/reading/" },
   publications: { hu: "/publikaciok/", en: "/en/publications/" },
   contact: { hu: "/elerhetoseg/", en: "/en/contact/" },
 } as const;
@@ -13,6 +16,17 @@ export type PageId = keyof typeof routes;
 
 /** Navigation order (the home page is reached through the name). */
 export const nav: PageId[] = ["research", "teaching", "publications", "contact"];
+
+/** Subpages and the top-level page they belong to (highlighted in the main navigation). */
+export const parent: Partial<Record<PageId, PageId>> = {
+  "teaching-courses": "teaching",
+  "teaching-notes": "teaching",
+  "teaching-reading": "teaching",
+};
+/** Second-level navigation shown on a section's pages. */
+export const subnav: Partial<Record<PageId, PageId[]>> = {
+  teaching: ["teaching", "teaching-courses", "teaching-notes", "teaching-reading"],
+};
 
 /** Prefixes a site path with the configured base (e.g. /personal-webpage). */
 export function url(path: string): string {
@@ -26,7 +40,13 @@ export const ui = {
     name: "Dr. Abari Kálmán",
     role: "egyetemi adjunktus",
     affiliation: "Szociál- és Munkapszichológiai Tanszék, Pszichológiai Intézet, Bölcsészettudományi Kar, Debreceni Egyetem",
-    pages: { home: "Főoldal", research: "Kutatás", teaching: "Oktatás", publications: "Publikációk", contact: "Elérhetőség" },
+    pages: {
+      home: "Főoldal", research: "Kutatás", teaching: "Oktatás", publications: "Publikációk", contact: "Elérhetőség",
+      "teaching-courses": "Kurzusok", "teaching-notes": "Jegyzetek", "teaching-reading": "Ajánlott irodalom",
+    },
+    subnavLabels: { teaching: "Áttekintés" } as Partial<Record<PageId, string>>,
+    subnavAria: "Az oktatás aloldalai",
+    teachingMaterials: "Tananyagok",
     skip: "Ugrás a tartalomra",
     nav: "Fő navigáció",
     switchLang: "Switch to English",
@@ -51,7 +71,13 @@ export const ui = {
     name: "Dr. Kálmán Abari",
     role: "Assistant Professor",
     affiliation: "Department of Social and Work Psychology, Institute of Psychology, Faculty of Humanities, University of Debrecen",
-    pages: { home: "Home", research: "Research", teaching: "Teaching", publications: "Publications", contact: "Contact" },
+    pages: {
+      home: "Home", research: "Research", teaching: "Teaching", publications: "Publications", contact: "Contact",
+      "teaching-courses": "Courses", "teaching-notes": "Notes", "teaching-reading": "Reading list",
+    },
+    subnavLabels: { teaching: "Overview" } as Partial<Record<PageId, string>>,
+    subnavAria: "Teaching pages",
+    teachingMaterials: "Materials",
     skip: "Skip to content",
     nav: "Main navigation",
     switchLang: "Váltás magyarra",

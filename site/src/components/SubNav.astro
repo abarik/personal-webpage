@@ -1,0 +1,22 @@
+---
+import { href, parent, subnav, ui, type Lang, type PageId } from "../lib/i18n";
+interface Props { lang: Lang; page: PageId }
+const { lang, page } = Astro.props;
+const section = parent[page] ?? page;
+const items = subnav[section];
+const t = ui[lang];
+---
+{items && (
+  <nav class="pw-subnav" aria-label={t.subnavAria}>
+    <ul>
+      {items.map((id) => (
+        <li>
+          <a href={href(id, lang)} aria-current={id === page ? "page" : undefined}>
+            {t.subnavLabels[id] ?? t.pages[id]}
+            {id === page && <span class="pw-subnav-mark" aria-hidden="true" />}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

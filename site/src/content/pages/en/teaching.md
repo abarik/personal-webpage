@@ -1,14 +1,12 @@
 ---
 title: Teaching
-description: Teaching of Dr. Kálmán Abari – statistics and data analysis in R.
-lead: Statistics and data analysis in R – courses, materials and the textbook written for them.
+description: Teaching materials of Dr. Kálmán Abari – statistics and data analysis in R, courses, notes and a reading list.
+lead: I teach statistics and data analysis in R, and have been part of teaching the R statistical software in Hungary for more than ten years.
 ---
 
-<!-- TODO: list of courses (name, type, semester), information for students. -->
+## Textbook
 
-## Statistics and data analysis in R
-
-I teach statistics and data analysis in R. My textbook for this:
+The textbook I wrote for my courses:
 
 <div class="callout" role="note">
 <div class="callout-title">Textbook</div>

@@ -213,7 +213,7 @@ h3 { font-size: 1.35rem; margin: 2.5rem 0 0.75rem; letter-spacing: -0.01em; font
 }
 .pw-nav a > span:not(.pw-nav-pill) { position: relative; z-index: 1; }
 .pw-nav a:hover { color: var(--pw-text); }
-.pw-nav a[aria-current="page"] { color: var(--pw-accent); }
+.pw-nav a[aria-current] { color: var(--pw-accent); }
 /* The current page's pill. It carries a view-transition name, so when you move to another
    page it glides from the old link to the new one. */
 .pw-nav-pill {
@@ -383,6 +383,33 @@ html[data-theme="dark"] .pw-avatar { filter: brightness(0.92) contrast(1.02); }
   color: var(--pw-muted);
 }
 
+/* Second-level navigation (e.g. the teaching pages): an underline that glides between tabs. */
+.pw-subnav { margin: -1rem -1rem 0; padding-inline: 1rem; padding-bottom: clamp(2rem, 1.5rem + 1.5vw, 3rem); overflow-x: auto; scrollbar-width: none; }
+.pw-subnav::-webkit-scrollbar { display: none; }
+.pw-subnav ul { position: relative; display: flex; gap: 1.75rem; width: max-content; margin: 0; padding: 0; list-style: none; }
+.pw-subnav a {
+  position: relative;
+  display: block;
+  padding: 0.35rem 0;
+  color: var(--pw-muted);
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: color var(--pw-dur) var(--pw-ease);
+}
+.pw-subnav a:hover { color: var(--pw-text); }
+.pw-subnav a[aria-current="page"] { color: var(--pw-text); font-weight: 600; }
+.pw-subnav-mark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pw-accent);
+}
+html:not(.pw-vt-theme) .pw-subnav-mark { view-transition-name: pw-subnav-mark; }
+::view-transition-group(pw-subnav-mark) { animation-duration: 450ms; animation-timing-function: var(--pw-ease-out); }
+
 /* ---- sections ------------------------------------------------------------ */
 
 .pw-section { position: relative; padding: clamp(3rem, 2rem + 3vw, 5rem) 0; }
@@ -403,6 +430,9 @@ html[data-theme="dark"] .pw-avatar { filter: brightness(0.92) contrast(1.02); }
   font-variation-settings: "opsz" 60;
   letter-spacing: -0.02em;
   overflow-wrap: normal;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
 }
 .pw-section-body { min-width: 0; max-width: var(--pw-measure); }
 .pw-section-body--wide { max-width: none; }
@@ -442,6 +472,33 @@ html[data-theme="dark"] .pw-avatar { filter: brightness(0.92) contrast(1.02); }
 .pw-area h3 a:hover { color: var(--pw-accent); }
 .pw-area p { margin: 0.4rem 0 0; color: var(--pw-muted); }
 @media (min-width: 720px) { .pw-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Link lists in Markdown sections (course materials, notes): calm rows with hairlines. */
+.pw-section-body ul:not([class]) { margin: 0; padding: 0; list-style: none; }
+.pw-section-body ul:not([class]) > li {
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent);
+}
+.pw-section-body ul:not([class]) > li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }
+.pw-section-body ul:not([class]) a { font-weight: 500; }
+.pw-section-body ul:not([class]) .pw-note,
+.pw-section-body p.pw-note { display: block; margin-top: 0.15rem; font-size: 0.92rem; color: var(--pw-muted); }
+.pw-section-body p + ul:not([class]) { margin-top: 1rem; }
+.pw-section-body ul:not([class]) + p, .pw-section-body ul:not([class]) + h3 { margin-top: 2rem; }
+.pw-section-body h3:first-child { margin-top: 0; }
+.pw-section-body ul:not([class]) a[href^="http"]::after { content: "\2009↗"; font-size: 0.85em; font-weight: 400; color: var(--pw-muted); }
+
+/* Reading list: hanging indent, as in a bibliography. */
+.pw-refs { margin: 0; padding: 0; list-style: none; }
+.pw-refs > li {
+  padding: 0.85rem 0 0.85rem 1.5rem;
+  text-indent: -1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent);
+  line-height: 1.6;
+}
+.pw-refs > li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--pw-border) 70%, transparent); }
+.pw-refs .pw-note { display: block; text-indent: 0; margin-top: 0.2rem; font-size: 0.92rem; color: var(--pw-muted); }
 
 /* A quiet text link that leads on ("Összes publikáció →"). */
 .pw-more {
@@ -592,3 +649,8 @@ html.pw-vt-theme::view-transition-new(root) { animation: pw-vt-circle 650ms var(
   .pw-section { display: block; }
   .pw-section > h2 { position: static; margin-bottom: 1rem; }
 }
+
+/* Cards that lead to another page: the arrow nudges on hover. */
+.pw-area-arrow { width: 1rem; height: 1rem; margin-left: 0.4rem; vertical-align: -0.1em; color: var(--pw-accent); transition: transform var(--pw-dur) var(--pw-ease-out); }
+@media (hover: hover) and (pointer: fine) { .pw-area h3 a:hover .pw-area-arrow { transform: translateX(3px); } }
+@media (min-width: 960px) { .pw-areas--links { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

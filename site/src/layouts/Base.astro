@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import Icon from "../components/Icon.astro";
-import { href, nav, ui, langs, links, type Lang, type PageId } from "../lib/i18n";
+import { href, nav, parent, ui, langs, links, type Lang, type PageId } from "../lib/i18n";
 
 interface Props {
   lang: Lang;
@@ -16,6 +16,7 @@ const fullTitle = page === "home" ? t.name : `${title} · ${t.name}`;
 const year = new Date().getFullYear();
 const updated = new Intl.DateTimeFormat(lang === "hu" ? "hu-HU" : "en-GB", { dateStyle: "long" }).format(new Date());
 const base = import.meta.env.BASE_URL;
+const section = parent[page] ?? page;
 ---
 <!doctype html>
 <html lang={lang} data-page={page}>
@@ -69,8 +70,8 @@ const base = import.meta.env.BASE_URL;
         <ul>
           {nav.map((id) => (
             <li>
-              <a href={href(id, lang)} aria-current={id === page ? "page" : undefined}>
-                {id === page && <span class="pw-nav-pill" aria-hidden="true" />}
+              <a href={href(id, lang)} aria-current={id === page ? "page" : id === section ? "true" : undefined}>
+                {id === section && <span class="pw-nav-pill" aria-hidden="true" />}
                 <span>{t.pages[id]}</span>
               </a>
             </li>
@@ -158,10 +159,11 @@ const base = import.meta.env.BASE_URL;
       }
 
       // Keep the current page's link in view in the scrollable phone navigation.
-      const current = document.querySelector('.pw-nav a[aria-current="page"]');
-      const navEl = document.querySelector(".pw-nav");
-      if (current && navEl.scrollWidth > navEl.clientWidth) {
-        navEl.scrollLeft = current.offsetLeft - (navEl.clientWidth - current.offsetWidth) / 2;
+      for (const navEl of document.querySelectorAll(".pw-nav, .pw-subnav")) {
+        const current = navEl.querySelector("a[aria-current]");
+        if (current && navEl.scrollWidth > navEl.clientWidth) {
+          navEl.scrollLeft = current.offsetLeft - (navEl.clientWidth - current.offsetWidth) / 2;
+        }
       }
 
       // Sections reveal once as they scroll into view. Only sections that start below
