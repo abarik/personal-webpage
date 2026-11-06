@@ -49,7 +49,7 @@ const page = await loadPage(lang, "home");
   <section class="pw-section" id="teaching">
     <h2>{t.teaching}</h2>
     <div class="pw-section-body pw-section-body--wide">
-      <CourseGroups lang={lang} compact />
+      <CourseGroups lang={lang} />
       <a class="pw-button" href={href("teaching", lang)}>{t.teachingDetails}<Icon name="arrow" /></a>
     </div>
   </section>

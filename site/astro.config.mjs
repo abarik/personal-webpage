@@ -13,4 +13,9 @@ export default defineConfig({
   build: { format: "directory" },
   markdown: { rehypePlugins: [rehypeSections] },
   devToolbar: { enabled: false },
+  // Pages that moved: the old addresses forward to the new ones.
+  redirects: {
+    "/oktatas/kurzusok/": "/oktatas/",
+    "/en/teaching/courses/": "/en/teaching/",
+  },
 });

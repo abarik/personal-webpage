@@ -1,39 +1,17 @@
 ---
-// Courses grouped by subject. "compact" (home page): a short description of each field.
-// Full (courses page): one section per group, with tags and materials.
+// Teaching areas on the home page: each subject with the first sentence of its description.
+// The full descriptions and the course lists stay in src/data/teaching.ts.
 import { courseGroups } from "../data/teaching";
-import { href, type Lang } from "../lib/i18n";
-interface Props { lang: Lang; compact?: boolean }
-const { lang, compact = false } = Astro.props;
+import type { Lang } from "../lib/i18n";
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const firstSentence = (text: string) => text.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? text;
 ---
-{compact ? (
-  <ul class="pw-areas">
-    {courseGroups.map((g) => (
-      <li class="pw-area">
-        <h3><a href={`${href("teaching-courses", lang)}#${g.id}`}>{g.title[lang]}</a></h3>
-        <p>{g.description[lang]}</p>
-      </li>
-    ))}
-  </ul>
-) : (
-  courseGroups.map((g) => (
-    <section class="pw-section" id={g.id}>
-      <h2>{g.title[lang]}</h2>
-      <div class="pw-section-body">
-        <p class="pw-group-intro">{g.description[lang]}</p>
-        <ul class="pw-course-list">
-          {g.courses.map((c) => (
-            <li>
-              <p class="pw-course-name">{c.name[lang]}{c.tags?.length ? <span class="pw-tags">{c.tags.map((t) => <span class="pw-tag">{t[lang]}</span>)}</span> : null}</p>
-              {c.links?.length ? (
-                <ul class="pw-course-links">
-                  {c.links.map((l) => <li><a href={l.href}>{l.label[lang]}</a></li>)}
-                </ul>
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  ))
-)}
+<ul class="pw-areas">
+  {courseGroups.map((g) => (
+    <li class="pw-area">
+      <h3>{g.title[lang]}</h3>
+      <p>{firstSentence(g.description[lang])}</p>
+    </li>
+  ))}
+</ul>

@@ -13,6 +13,11 @@ lead: Az általam készített R jegyzetek, feladatgyűjtemények és tesztek.
 - [Basic R](https://abarik.github.io/basicr_2020_21_2/)
 - [Advanced R](https://abarik.github.io/advancedr_2021_22_1/)
 
+## Források
+
+- [R könyvek, tutoriálok, blogok, adatbázisok](https://abarik.github.io/roforrasok/)
+- [Statisztika könyvek – példa adatbázisok felhasználása](https://abarik.github.io/statkonyvek/)
+
 ## Archívum
 
 A 2020 előtt készült anyagok.

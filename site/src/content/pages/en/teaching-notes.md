@@ -13,6 +13,11 @@ lead: R notes, exercise collections and tests I have written. The materials are 
 - [Basic R](https://abarik.github.io/basicr_2020_21_2/)
 - [Advanced R](https://abarik.github.io/advancedr_2021_22_1/)
 
+## Resources
+
+- [R books, tutorials, blogs and datasets](https://abarik.github.io/roforrasok/)
+- [Statistics books – using their example datasets](https://abarik.github.io/statkonyvek/)
+
 ## Archive
 
 Materials written before 2020.
