@@ -783,3 +783,6 @@ html[data-section="teaching"]:not(.pw-vt-theme) .pw-pagehead { view-transition-n
 ::view-transition-group(pw-pagehead) { animation-duration: 0.01ms; }
 ::view-transition-old(pw-pagehead) { display: none; }
 ::view-transition-new(pw-pagehead) { animation: none; }
+
+/* A smaller lead-on link inside a card (e.g. reading list under a teaching area). */
+.pw-more--small { margin-top: 0.6rem; font-size: 0.9rem; }

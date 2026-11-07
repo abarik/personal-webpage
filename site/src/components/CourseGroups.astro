@@ -2,7 +2,8 @@
 // Teaching areas on the home page: each subject with the first sentence of its description.
 // The full descriptions and the course lists stay in src/data/teaching.ts.
 import { courseGroups } from "../data/teaching";
-import type { Lang } from "../lib/i18n";
+import Icon from "./Icon.astro";
+import { href, ui, type Lang } from "../lib/i18n";
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const firstSentence = (text: string) => text.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? text;
@@ -12,6 +13,7 @@ const firstSentence = (text: string) => text.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? 
     <li class="pw-area">
       <h3>{g.title[lang]}</h3>
       <p>{firstSentence(g.description[lang])}</p>
+      <a class="pw-more pw-more--small" href={`${href("teaching-reading", lang)}#${g.reading[lang]}`}>{ui[lang].readingLink}<Icon name="arrow" /></a>
     </li>
   ))}
 </ul>

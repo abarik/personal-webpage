@@ -8,7 +8,14 @@ export interface Course {
   /** Materials, shown on the courses page. */
   links?: { label: T; href: string }[];
 }
-export interface CourseGroup { id: string; title: T; description: T; courses: Course[] }
+export interface CourseGroup {
+  id: string;
+  title: T;
+  description: T;
+  /** The matching section id on the reading-list page, per language. */
+  reading: T;
+  courses: Course[];
+}
 
 const BA: T = { hu: "BA", en: "BA" };
 const MA: T = { hu: "MA", en: "MA" };
@@ -19,6 +26,7 @@ const ENGLISH: T = { hu: "angol nyelvű", en: "in English" };
 export const courseGroups: CourseGroup[] = [
   {
     id: "statistics",
+    reading: { hu: "statisztika", en: "statistics" },
     title: { hu: "Statisztika", en: "Statistics" },
     description: {
       hu: "A pszichológiai kutatás nyelve: hogyan írjuk le az adatokat, és mikor vonhatunk le belőlük megbízható következtetést. A matematikai alapoktól a paraméteres próbákon át a többváltozós módszerekig vezetem végig a hallgatókat, R-ben és jamoviban, magyarul és angolul.",
@@ -41,6 +49,7 @@ export const courseGroups: CourseGroup[] = [
   },
   {
     id: "computing",
+    reading: { hu: "szamitastechnika", en: "computing" },
     title: { hu: "Számítástechnika", en: "Computing" },
     description: {
       hu: "A tudományos munka digitális alapjai: táblázatkezelés, hivatkozáskezelés és a könyvtári források használata. Célom, hogy a hallgatók magabiztosan és hatékonyan használják a számítógépet a tanulmányaik során.",
@@ -61,6 +70,7 @@ export const courseGroups: CourseGroup[] = [
   },
   {
     id: "ai",
+    reading: { hu: "mesterseges-intelligencia", en: "artificial-intelligence" },
     title: { hu: "Mesterséges intelligencia", en: "Artificial intelligence" },
     description: {
       hu: "Hogyan működnek a mai MI-rendszerek, és mit jelentenek a pszichológia számára? A gépi tanulás alapjaitól a nagy nyelvi modellekig tekintjük át a területet, a lehetőségekkel és a korlátokkal együtt.",
@@ -70,6 +80,7 @@ export const courseGroups: CourseGroup[] = [
   },
   {
     id: "networks",
+    reading: { hu: "tarsas-halozatok", en: "social-networks" },
     title: { hu: "Társas hálózatok", en: "Social networks" },
     description: {
       hu: "A kapcsolatok szerkezete is sokat elárul: ki kivel áll kapcsolatban, ki van a hálózat közepén, és hogyan terjed benne az információ. A tárgy a társas hálózatok elemzésének fogalmait és módszereit mutatja be, gyakorlati példákon.",
@@ -84,6 +95,7 @@ export const courseGroups: CourseGroup[] = [
   },
   {
     id: "knowledge-space",
+    reading: { hu: "tudasterelmelet", en: "knowledge-space-theory" },
     title: { hu: "Tudástérelmélet", en: "Knowledge space theory" },
     description: {
       hu: "A tudástérelmélet azt modellezi, hogyan épülnek egymásra az ismeretek egy tárgyterületen, és ebből hogyan állapítható meg pontosan, mit tud valaki. A PhD-kurzuson a módszer gyakorlati alkalmazásait vesszük sorra.",
