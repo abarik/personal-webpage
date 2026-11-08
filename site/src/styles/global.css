@@ -823,3 +823,50 @@ html:is([data-section="research"], [data-section="publications"]) .pw-section > 
   }
 }
 .pw-section > h2 .pw-count { white-space: nowrap; }
+
+/* Featured books on the home page: cover, then the APA reference. */
+.pw-books { display: grid; gap: 1.75rem; margin: 0 0 2.25rem; padding: 0; list-style: none; }
+@media (min-width: 640px) { .pw-books { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.pw-book { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+.pw-book-cover {
+  display: block;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 4px 8px 8px 4px;
+  background: var(--pw-surface-alt);
+  box-shadow: inset 3px 0 0 rgb(0 0 0 / 0.12), var(--pw-shadow);
+  text-decoration: none;
+  transition: transform 500ms var(--pw-ease-out);
+}
+.pw-book-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (hover: hover) and (pointer: fine) { .pw-book-cover:hover { transform: translateY(-3px) rotate(-1deg); } }
+/* No cover image yet: a typographic cover in the site's own palette. */
+.pw-book-drawn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.75rem 0.7rem 0.65rem 0.9rem;
+  background:
+    radial-gradient(120% 70% at 100% 0%, color-mix(in srgb, #fff 14%, transparent), transparent 60%),
+    var(--pw-accent);
+  color: #fdf6f2;
+}
+html[data-theme="dark"] .pw-book-drawn { color: #1d1a17; }
+.pw-book-author { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
+.pw-book-title {
+  margin-top: 0.6rem;
+  font-family: var(--pw-font-heading);
+  font-variation-settings: "opsz" 36;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.1;
+  hyphens: auto;
+}
+.pw-book-publisher { margin-top: auto; font-size: 0.55rem; letter-spacing: 0.04em; opacity: 0.8; }
+.pw-book-ref { font-size: 0.97rem; line-height: 1.6; }
+.pw-book-ref .pw-me { font-weight: 600; }
+
+/* Publication counts that lead to the topic's publications. */
+.pw-stat a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 0.2em; }
+.pw-stat a:hover { color: var(--pw-accent); text-decoration-color: currentColor; }
+

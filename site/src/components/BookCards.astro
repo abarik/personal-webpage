@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import { featuredBooks } from "../data/featured";
+import { publications } from "../lib/bib";
+import { ui, type Lang } from "../lib/i18n";
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang];
+const books = featuredBooks.map((b) => ({ ...b, pub: publications.find((p) => p.id === b.key) })).filter((b) => b.pub);
+---
+<ul class="pw-books">
+  {books.map((b) => (
+    <li class="pw-book">
+      <a class="pw-book-cover" href={b.pub!.mtmt ?? undefined} aria-hidden="true" tabindex="-1">
+        {b.cover ? (
+          <Image src={b.cover} alt="" widths={[240, 480]} sizes="12rem" loading="lazy" />
+        ) : (
+          <span class="pw-book-drawn">
+            <span class="pw-book-author">{t.name.replace(/^Dr\. /, "")}</span>
+            <span class="pw-book-title">{b.title}</span>
+            <span class="pw-book-publisher">{b.publisher}</span>
+          </span>
+        )}
+      </a>
+      <div class="pw-book-ref">
+        <span set:html={b.pub!.html} />
+        {b.pub!.mtmt && <span class="pw-pub-meta"><a href={b.pub!.mtmt}>MTMT</a></span>}
+      </div>
+    </li>
+  ))}
+</ul>

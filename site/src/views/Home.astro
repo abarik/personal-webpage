@@ -4,6 +4,8 @@ import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
 import PubList from "../components/PubList.astro";
 import CourseGroups from "../components/CourseGroups.astro";
+import BookCards from "../components/BookCards.astro";
+import { featuredPublications } from "../data/featured";
 import portrait from "../assets/profile.jpg";
 import { href, ui, links, type Lang } from "../lib/i18n";
 import { topics } from "../data/research";
@@ -41,12 +43,12 @@ const page = await loadPage(lang, "home");
           return (
             <li class="pw-area">
               <h3><a href={`${href("research", lang)}#${tp.id}`}>{tp.title[lang]}</a></h3>
-              <p class="pw-stat">{t.pubCount(items.length)}{scopus > 0 && <span> · {t.scopusCount(scopus)}</span>}</p>
+              <p class="pw-stat"><a href={`${href("publications", lang)}#${tp.id}`}>{t.pubCount(items.length)}{scopus > 0 && <span> · {t.scopusCount(scopus)}</span>}</a></p>
             </li>
           );
         })}
       </ul>
-      <a class="pw-more" href={href("research", lang)}>{t.moreResearch}<Icon name="arrow" /></a>
+      <a class="pw-button" href={href("research", lang)}>{t.moreResearch}<Icon name="arrow" /></a>
     </div>
   </section>
 
@@ -61,7 +63,8 @@ const page = await loadPage(lang, "home");
   <section class="pw-section" id="recent">
     <h2>{t.recentPublications}</h2>
     <div class="pw-section-body">
-      <PubList items={publications.slice(0, 4)} lang={lang} />
+      <BookCards lang={lang} />
+      <PubList items={featuredPublications.map((k) => publications.find((p) => p.id === k)!).filter(Boolean)} lang={lang} />
       <a class="pw-more" href={href("publications", lang)}>{t.allPublications}<Icon name="arrow" /></a>
     </div>
   </section>

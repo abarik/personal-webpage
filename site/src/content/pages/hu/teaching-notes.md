@@ -4,14 +4,20 @@ description: Az általam készített R jegyzetek, feladatgyűjtemények és tesz
 lead: Az általam készített R jegyzetek, feladatgyűjtemények és tesztek.
 ---
 
-## Jegyzetek 2020-tól
+## Aktuális
 
 - [Többváltozós statisztika jamovi-ban és R-ben](https://abarik.github.io/tsjr/)
-- [Társas hálózatok elemzése](https://abarik.github.io/tarsas_halozatok_elemzese_2023_24_1/)
+- [Társas hálózatok elemzése](https://abarik.github.io/tarsas_halozatok_elemzese_2023_24_1/) <span class="pw-note">Kurzusjegyzet, 2023/24. tanév 1. félév.</span>
 - [Példák próbák végrehajtására](https://abarik.github.io/stat1_kurzus/)
 - [Adatkezelés és egyváltozós elemzések R-ben](https://abarik.github.io/aeer/)
 - [Basic R](https://abarik.github.io/basicr_2020_21_2/)
 - [Advanced R](https://abarik.github.io/advancedr_2021_22_1/)
+- [OpenSesame a pszichológiai tesztek készítésében](https://abarik.github.io/osexp/) <span class="pw-note">Bevezetés kezdőknek az OpenSesame programba, tippekkel Inquisit-felhasználóknak.</span>
+- [Publikációkész grafika R-ben](https://abarik.github.io/pkgr/) <span class="pw-note">Receptek publikációs minőségű ábrákhoz a ggplot2 csomaggal.</span>
+- [Társas hálózatok elemzése](https://abarik.github.io/tarsas_halozatok_elemzese_2025_26_1/) <span class="pw-note">Kurzusjegyzet R-rel és RStudióval, 2025/26. tanév 1. félév.</span>
+- [Statistics for Psychologists 3](https://abarik.github.io/statistics_for_psychologists_3_2025_26_2/) <span class="pw-note">Angol nyelvű kurzusoldal, 2025/26. tanév 2. félév.</span>
+- [Computer Science 1](https://abarik.github.io/computer_science_1_2026_27_1/) <span class="pw-note">Angol nyelvű kurzusjegyzet, 2026/27. tanév 1. félév.</span>
+- [Bevezetés a mesterséges intelligenciába](https://abarik.github.io/bevezetes_a_mesterseges_intelligenciaba_2026_27_1/) <span class="pw-note">Kurzusjegyzet, 2026/27. tanév 1. félév.</span>
 
 ## Források
 

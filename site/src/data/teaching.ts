@@ -89,7 +89,7 @@ export const courseGroups: CourseGroup[] = [
     courses: [
       {
         name: { hu: "Társas hálózatok elemzése", en: "Social Network Analysis" },
-        links: [{ label: { hu: "Társas hálózatok elemzése – jegyzet", en: "Social network analysis – notes" }, href: "https://abarik.github.io/tarsas_halozatok_elemzese_2023_24_1/" }],
+        links: [{ label: { hu: "Társas hálózatok elemzése – jegyzet", en: "Social network analysis – notes" }, href: "https://abarik.github.io/tarsas_halozatok_elemzese_2025_26_1/" }],
       },
     ],
   },

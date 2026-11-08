@@ -15,8 +15,8 @@ export const routes = {
 } as const;
 export type PageId = keyof typeof routes;
 
-/** Navigation order (the home page is reached through the name). */
-export const nav: PageId[] = ["research", "teaching", "publications", "contact"];
+/** Navigation order. */
+export const nav: PageId[] = ["home", "research", "teaching", "publications", "contact"];
 
 /** Subpages and the top-level page they belong to (highlighted in the main navigation). */
 export const parent: Partial<Record<PageId, PageId>> = {
@@ -27,7 +27,7 @@ export const parent: Partial<Record<PageId, PageId>> = {
 };
 /** Second-level navigation shown on a section's pages. */
 export const subnav: Partial<Record<PageId, PageId[]>> = {
-  teaching: ["teaching", "teaching-notes", "teaching-reading"],
+  teaching: ["teaching-reading", "teaching-notes", "teaching"],
   publications: ["publications", "publications-year", "publications-type"],
 };
 
