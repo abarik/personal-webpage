@@ -1,8 +1,7 @@
 ---
 title: Kutatás
-description: Dr. Abari Kálmán kutatási területei – statisztika és R, beszédkutatás, gamifikáció, algoritmikus készségek.
-lead: Négy egymást erősítő terület – a statisztikai módszertan köti össze a beszédkutatást és az oktatás vizsgálatát.
+description: Dr. Abari Kálmán kutatási területei – beszédkutatás, oktatáskutatás, statisztika és módszertan, nyelvtanulás, alkalmazott pszichológia, gamifikáció, tudástérelmélet.
+lead: Kutatásaim hét területet ölelnek fel a beszédkutatástól az oktatáskutatásig; közös nevezőjük a statisztikai módszertan.
 ---
 
-<!-- A kutatási területek a src/data/research.ts fájlban vannak.
-     Ide további szakaszok írhatók "## Cím" fejléccel (pl. projektek). -->
+<!-- A kutatási területek leírása: src/data/research.ts; a publikációk száma a publikációs listából számolódik. -->

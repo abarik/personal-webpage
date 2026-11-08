@@ -786,3 +786,40 @@ html[data-section="teaching"]:not(.pw-vt-theme) .pw-pagehead { view-transition-n
 
 /* A smaller lead-on link inside a card (e.g. reading list under a teaching area). */
 .pw-more--small { margin-top: 0.6rem; font-size: 0.9rem; }
+
+/* Publication counts: quiet numerals next to headings and under topics. */
+.pw-count {
+  margin-left: 0.5rem;
+  font-family: var(--pw-font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: 0.35em;
+  color: var(--pw-muted);
+  font-variant-numeric: tabular-nums;
+}
+.pw-stat { margin: 0.35rem 0 0; color: var(--pw-muted); font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.pw-section-body .pw-stat { margin-top: 0.75rem; }
+.pw-topics .pw-area { padding-bottom: 1.1rem; }
+
+/* Publication entries: Scopus tag and MTMT record under the reference. */
+.pw-pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 0.3rem; font-size: 0.85rem; }
+.pw-pub-meta a { color: var(--pw-muted); text-decoration: none; font-weight: 600; letter-spacing: 0.03em; }
+.pw-pub-meta a:hover { color: var(--pw-accent); }
+.pw-pub-meta a::after { content: "\2009↗"; font-weight: 400; }
+.pw-pub a { overflow-wrap: anywhere; }
+.pw-pubs--noyear > li { grid-template-columns: minmax(0, 1fr); }
+
+/* Research and publications: topic names are long, so the label column is wider,
+   the heading smaller, and words are never broken. */
+html:is([data-section="research"], [data-section="publications"]) .pw-section > h2 {
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.75rem);
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+@media (min-width: 960px) {
+  html:is([data-section="research"], [data-section="publications"]) .pw-section {
+    grid-template-columns: 16.5rem minmax(0, 1fr);
+  }
+}
+.pw-section > h2 .pw-count { white-space: nowrap; }

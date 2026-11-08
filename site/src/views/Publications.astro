@@ -1,25 +1,31 @@
 ---
+// Publications in three arrangements: by topic (default), by year, by type.
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
+import SubNav from "../components/SubNav.astro";
 import PubList from "../components/PubList.astro";
-import { ui, type Lang } from "../lib/i18n";
-import { books, papers } from "../lib/bib";
+import { ui, type Lang, type PageId } from "../lib/i18n";
+import { topics } from "../data/research";
+import { byTopic, byType, byYear, pubTypes, years } from "../lib/bib";
 import { loadPage } from "../lib/page";
 
-interface Props { lang: Lang }
-const { lang } = Astro.props;
+interface Props { lang: Lang; view?: "topic" | "year" | "type" }
+const { lang, view = "topic" } = Astro.props;
 const t = ui[lang];
 const page = await loadPage(lang, "publications");
+const id: PageId = view === "year" ? "publications-year" : view === "type" ? "publications-type" : "publications";
+const sections =
+  view === "year" ? years.map((y) => ({ id: `y${y}`, title: String(y), items: byYear(y), showYear: false }))
+  : view === "type" ? pubTypes.map((k) => ({ id: k, title: t.pubTypes[k], items: byType(k), showYear: true }))
+  : topics.map((tp) => ({ id: tp.id, title: tp.title[lang], items: byTopic(tp.id), showYear: true }));
 ---
-<Base lang={lang} page="publications" title={page.title} description={page.description}>
+<Base lang={lang} page={id} title={id === "publications" ? page.title : `${t.pages[id]} · ${page.title}`} description={page.description}>
   <PageHead title={page.title} lead={page.lead} />
-  <section class="pw-section" id="books">
-    <h2>{t.books}</h2>
-    <div class="pw-section-body"><PubList items={books} /></div>
-  </section>
-  <section class="pw-section" id="papers">
-    <h2>{t.articles}</h2>
-    <div class="pw-section-body"><PubList items={papers} /></div>
-  </section>
-  <page.Content />
+  <SubNav lang={lang} page={id} />
+  {sections.filter((s) => s.items.length).map((s) => (
+    <section class="pw-section" id={s.id}>
+      <h2>{s.title}<span class="pw-count">{s.items.length}</span></h2>
+      <div class="pw-section-body"><PubList items={s.items} lang={lang} showYear={s.showYear} /></div>
+    </section>
+  ))}
 </Base>

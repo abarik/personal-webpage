@@ -9,6 +9,8 @@ export const routes = {
   "teaching-notes": { hu: "/oktatas/jegyzetek/", en: "/en/teaching/notes/" },
   "teaching-reading": { hu: "/oktatas/irodalom/", en: "/en/teaching/reading/" },
   publications: { hu: "/publikaciok/", en: "/en/publications/" },
+  "publications-year": { hu: "/publikaciok/idorendben/", en: "/en/publications/by-year/" },
+  "publications-type": { hu: "/publikaciok/tipus-szerint/", en: "/en/publications/by-type/" },
   contact: { hu: "/elerhetoseg/", en: "/en/contact/" },
 } as const;
 export type PageId = keyof typeof routes;
@@ -18,12 +20,15 @@ export const nav: PageId[] = ["research", "teaching", "publications", "contact"]
 
 /** Subpages and the top-level page they belong to (highlighted in the main navigation). */
 export const parent: Partial<Record<PageId, PageId>> = {
+  "publications-year": "publications",
+  "publications-type": "publications",
   "teaching-notes": "teaching",
   "teaching-reading": "teaching",
 };
 /** Second-level navigation shown on a section's pages. */
 export const subnav: Partial<Record<PageId, PageId[]>> = {
   teaching: ["teaching", "teaching-notes", "teaching-reading"],
+  publications: ["publications", "publications-year", "publications-type"],
 };
 
 /** Prefixes a site path with the configured base (e.g. /personal-webpage). */
@@ -41,13 +46,22 @@ export const ui = {
     pages: {
       home: "Főoldal", research: "Kutatás", teaching: "Oktatás", publications: "Publikációk", contact: "Elérhetőség",
       "teaching-notes": "Jegyzetek", "teaching-reading": "Ajánlott irodalom kurzusokhoz",
+      "publications-year": "Időrendben", "publications-type": "Típus szerint",
     },
-    subnavLabels: { teaching: "Videók" } as Partial<Record<PageId, string>>,
-    subnavAria: "Az oktatás aloldalai",
+    subnavLabels: { teaching: "Videók", publications: "Témakörök szerint" } as Partial<Record<PageId, string>>,
+    subnavAria: "Aloldalak",
     teachingMaterials: "Tananyagok",
     teaching: "Oktatás",
     teachingDetails: "Részletek az oktatásról",
     readingLink: "Ajánlott irodalom",
+    pubCount: (n: number) => `${n} publikáció`,
+    scopusCount: (n: number) => `ebből ${n} Scopus`,
+    topicPubs: "A témakör publikációi",
+    pubTypes: {
+      book: "Könyvek", edited: "Szerkesztett kötetek", chapter: "Könyvfejezetek", article: "Folyóiratcikkek",
+      conference: "Konferenciaközlemények", abstract: "Absztraktok", thesis: "Disszertáció", other: "Egyéb",
+    },
+    scopus: "Scopus",
     courseMaterials: "Anyagok",
     videos: "Videó\u00ADsorozatok",
     watch: "Megnézem",
@@ -79,13 +93,22 @@ export const ui = {
     pages: {
       home: "Home", research: "Research", teaching: "Teaching", publications: "Publications", contact: "Contact",
       "teaching-notes": "Notes", "teaching-reading": "Reading list by course",
+      "publications-year": "By year", "publications-type": "By type",
     },
-    subnavLabels: { teaching: "Videos" } as Partial<Record<PageId, string>>,
-    subnavAria: "Teaching pages",
+    subnavLabels: { teaching: "Videos", publications: "By topic" } as Partial<Record<PageId, string>>,
+    subnavAria: "Subpages",
     teachingMaterials: "Materials",
     teaching: "Teaching",
     teachingDetails: "More about my teaching",
     readingLink: "Recommended reading",
+    pubCount: (n: number) => `${n} publication${n === 1 ? "" : "s"}`,
+    scopusCount: (n: number) => `${n} in Scopus`,
+    topicPubs: "Publications in this area",
+    pubTypes: {
+      book: "Books", edited: "Edited volumes", chapter: "Book chapters", article: "Journal articles",
+      conference: "Conference papers", abstract: "Abstracts", thesis: "Dissertation", other: "Other",
+    },
+    scopus: "Scopus",
     courseMaterials: "Materials",
     videos: "Video series",
     watch: "Watch",

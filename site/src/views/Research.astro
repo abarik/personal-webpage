@@ -1,21 +1,34 @@
 ---
+// Research: the topics, each with a short description, publication count and a link
+// to its section on the publications page.
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
-import { type Lang } from "../lib/i18n";
-import { research } from "../data/research";
+import Icon from "../components/Icon.astro";
+import { href, ui, type Lang } from "../lib/i18n";
+import { topics } from "../data/research";
+import { byTopic } from "../lib/bib";
 import { loadPage } from "../lib/page";
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
+const t = ui[lang];
 const page = await loadPage(lang, "research");
 ---
 <Base lang={lang} page="research" title={page.title} description={page.description}>
   <PageHead title={page.title} lead={page.lead} />
-  {research.map((a) => (
-    <section class="pw-section" id={a.id}>
-      <h2>{a.title[lang]}</h2>
-      <div class="pw-section-body"><p>{a.text[lang]}</p></div>
-    </section>
-  ))}
+  {topics.map((tp) => {
+    const items = byTopic(tp.id);
+    const scopus = items.filter((p) => p.scopus).length;
+    return (
+      <section class="pw-section" id={tp.id}>
+        <h2>{tp.title[lang]}</h2>
+        <div class="pw-section-body">
+          <p>{tp.text[lang]}</p>
+          <p class="pw-stat">{t.pubCount(items.length)}{scopus > 0 && <span> · {t.scopusCount(scopus)}</span>}</p>
+          <a class="pw-more" href={`${href("publications", lang)}#${tp.id}`}>{t.topicPubs}<Icon name="arrow" /></a>
+        </div>
+      </section>
+    );
+  })}
   <page.Content />
 </Base>

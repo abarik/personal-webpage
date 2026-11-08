@@ -1,13 +1,23 @@
 ---
 import type { Publication } from "../lib/bib";
-interface Props { items: Publication[] }
-const { items } = Astro.props;
+import { ui, type Lang } from "../lib/i18n";
+interface Props { items: Publication[]; lang: Lang; showYear?: boolean }
+const { items, lang, showYear = true } = Astro.props;
+const t = ui[lang];
 ---
-<ol class="pw-pubs">
+<ol class:list={["pw-pubs", { "pw-pubs--noyear": !showYear }]}>
   {items.map((p, i) => (
-    <li class={i > 0 && items[i - 1].year === p.year ? "pw-same-year" : undefined}>
-      <span class="pw-pub-year">{p.year}</span>
-      <span class="pw-pub" set:html={p.html} />
+    <li class={showYear && i > 0 && items[i - 1].year === p.year ? "pw-same-year" : undefined}>
+      {showYear && <span class="pw-pub-year">{p.year}</span>}
+      <span class="pw-pub">
+        <span set:html={p.html} />
+        {(p.scopus || p.mtmt) && (
+          <span class="pw-pub-meta">
+            {p.scopus && <span class="pw-tag">{t.scopus}</span>}
+            {p.mtmt && <a href={p.mtmt}>MTMT</a>}
+          </span>
+        )}
+      </span>
     </li>
   ))}
 </ol>

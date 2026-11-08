@@ -6,8 +6,8 @@ import PubList from "../components/PubList.astro";
 import CourseGroups from "../components/CourseGroups.astro";
 import portrait from "../assets/profile.jpg";
 import { href, ui, links, type Lang } from "../lib/i18n";
-import { research } from "../data/research";
-import { publications } from "../lib/bib";
+import { topics } from "../data/research";
+import { publications, byTopic } from "../lib/bib";
 import { loadPage } from "../lib/page";
 
 interface Props { lang: Lang }
@@ -34,13 +34,17 @@ const page = await loadPage(lang, "home");
   <section class="pw-section" id="areas">
     <h2>{t.researchAreas}</h2>
     <div class="pw-section-body pw-section-body--wide">
-      <ul class="pw-areas">
-        {research.map((a) => (
-          <li class="pw-area">
-            <h3><a href={`${href("research", lang)}#${a.id}`}>{a.title[lang]}</a></h3>
-            <p>{a.text[lang]}</p>
-          </li>
-        ))}
+      <ul class="pw-areas pw-topics">
+        {topics.map((tp) => {
+          const items = byTopic(tp.id);
+          const scopus = items.filter((p) => p.scopus).length;
+          return (
+            <li class="pw-area">
+              <h3><a href={`${href("research", lang)}#${tp.id}`}>{tp.title[lang]}</a></h3>
+              <p class="pw-stat">{t.pubCount(items.length)}{scopus > 0 && <span> · {t.scopusCount(scopus)}</span>}</p>
+            </li>
+          );
+        })}
       </ul>
       <a class="pw-more" href={href("research", lang)}>{t.moreResearch}<Icon name="arrow" /></a>
     </div>
@@ -57,7 +61,7 @@ const page = await loadPage(lang, "home");
   <section class="pw-section" id="recent">
     <h2>{t.recentPublications}</h2>
     <div class="pw-section-body">
-      <PubList items={publications.slice(0, 4)} />
+      <PubList items={publications.slice(0, 4)} lang={lang} />
       <a class="pw-more" href={href("publications", lang)}>{t.allPublications}<Icon name="arrow" /></a>
     </div>
   </section>

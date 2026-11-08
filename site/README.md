@@ -18,9 +18,10 @@ npm run preview    # a lefordított oldal kipróbálása
 | Mit | Hol |
 |---|---|
 | Oldalszövegek (cím, leírás, bevezető, törzs) | `src/content/pages/hu/*.md`, `src/content/pages/en/*.md` |
-| Kutatási területek | `src/data/research.ts` |
+| Kutatási témakörök (név, leírás; sorrend) | `src/data/research.ts` |
 | Tárgyak csoportokban (főoldal és Kurzusok oldal), anyagaikkal | `src/data/teaching.ts` |
-| Publikációk (BibTeX, APA formában jelennek meg) | `src/data/publications.bib` |
+| Publikációk (MTMT-export: BibTeX + CSV; APA 7 formában jelennek meg) | `src/data/publications.bib`, `src/data/publications.csv` |
+| Az export hibáinak javításai (folyóiratnevek, felcserélt nevek, kiadók) | `src/data/publication-fixes.ts` |
 | Név, beosztás, felületi szövegek, linkek, oldalak útvonalai | `src/lib/i18n.ts` |
 | Megjelenés (színek, betűk, mozgás) | `src/styles/global.css` |
 | Fejléc, lábléc, téma- és nyelvváltás | `src/layouts/Base.astro` |
@@ -40,3 +41,12 @@ Lásd a repó gyökerében a `CLAUDE.md` „Design direction” részét: kifino
 nem harsány; karakteres tipográfia, gondos ritmus; egy belépő animáció a főoldalon;
 sima téma-, nyelv- és oldalváltás; a szakaszok görgetéskor egyszer jelennek meg;
 a listák nem mozognak.
+
+## Publikációk frissítése
+
+1. Töltsd le az új exportot (BibTeX + CSV).
+2. Cseréld le vele a `src/data/publications.bib` és a `src/data/publications.csv` fájlt (ugyanezen a néven).
+3. `npm run build` – a témakörönkénti számok, a három elrendezés (témakör, év, típus) és az APA 7 formázás automatikusan frissül.
+
+A témakört a CSV `terulet` oszlopa adja; értékének egyeznie kell a `src/data/research.ts` egyik `csv` nevével.
+Az exportban visszatérő hibák javításai a `src/data/publication-fixes.ts`-ben vannak, ezek az új exportra is lefutnak.
