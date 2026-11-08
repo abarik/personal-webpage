@@ -824,22 +824,27 @@ html:is([data-section="research"], [data-section="publications"]) .pw-section > 
 }
 .pw-section > h2 .pw-count { white-space: nowrap; }
 
-/* Featured books on the home page: cover, then the APA reference. */
-.pw-books { display: grid; gap: 1.75rem; margin: 0 0 2.25rem; padding: 0; list-style: none; }
-@media (min-width: 640px) { .pw-books { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.pw-book { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.1rem; align-items: start; }
+/* Featured books on the home page: covers side by side, the APA reference beneath. */
+.pw-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.5rem; margin: 0 0 2.5rem; padding: 0; list-style: none; }
+@media (min-width: 640px) { .pw-books { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.pw-book { display: flex; flex-direction: column; gap: 0.9rem; }
 .pw-book-cover {
-  display: block;
-  aspect-ratio: 2 / 3;
-  overflow: hidden;
-  border-radius: 4px 8px 8px 4px;
-  background: var(--pw-surface-alt);
-  box-shadow: inset 3px 0 0 rgb(0 0 0 / 0.12), var(--pw-shadow);
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 3 / 4;
   text-decoration: none;
+}
+.pw-book-cover > img, .pw-book-cover > .pw-book-drawn {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 3px 6px 6px 3px;
+  box-shadow: inset 3px 0 0 rgb(0 0 0 / 0.12), var(--pw-shadow);
   transition: transform 500ms var(--pw-ease-out);
 }
-.pw-book-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
-@media (hover: hover) and (pointer: fine) { .pw-book-cover:hover { transform: translateY(-3px) rotate(-1deg); } }
+.pw-book-cover > .pw-book-drawn { width: 75%; height: 100%; }
+@media (hover: hover) and (pointer: fine) { .pw-book-cover:hover > * { transform: translateY(-4px) rotate(-1deg); } }
 /* No cover image yet: a typographic cover in the site's own palette. */
 .pw-book-drawn {
   display: flex;
@@ -869,4 +874,8 @@ html[data-theme="dark"] .pw-book-drawn { color: #1d1a17; }
 /* Publication counts that lead to the topic's publications. */
 .pw-stat a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 0.2em; }
 .pw-stat a:hover { color: var(--pw-accent); text-decoration-color: currentColor; }
+
+/* Free download link: the one accented item in a publication's meta line. */
+.pw-pub-meta a.pw-download { color: var(--pw-accent); }
+.pw-pub-meta a.pw-download::after { content: "\2009↓"; }
 

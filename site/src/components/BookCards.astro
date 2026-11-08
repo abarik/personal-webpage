@@ -11,7 +11,7 @@ const books = featuredBooks.map((b) => ({ ...b, pub: publications.find((p) => p.
 <ul class="pw-books">
   {books.map((b) => (
     <li class="pw-book">
-      <a class="pw-book-cover" href={b.pub!.mtmt ?? undefined} aria-hidden="true" tabindex="-1">
+      <a class="pw-book-cover" href={b.pub!.download ?? b.pub!.mtmt ?? undefined} aria-hidden="true" tabindex="-1">
         {b.cover ? (
           <Image src={b.cover} alt="" widths={[240, 480]} sizes="12rem" loading="lazy" />
         ) : (
@@ -24,7 +24,12 @@ const books = featuredBooks.map((b) => ({ ...b, pub: publications.find((p) => p.
       </a>
       <div class="pw-book-ref">
         <span set:html={b.pub!.html} />
-        {b.pub!.mtmt && <span class="pw-pub-meta"><a href={b.pub!.mtmt}>MTMT</a></span>}
+        {(b.pub!.download || b.pub!.mtmt) && (
+          <span class="pw-pub-meta">
+            {b.pub!.download && <a class="pw-download" href={b.pub!.download}>{t.download}</a>}
+            {b.pub!.mtmt && <a href={b.pub!.mtmt}>MTMT</a>}
+          </span>
+        )}
       </div>
     </li>
   ))}

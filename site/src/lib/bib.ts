@@ -7,6 +7,7 @@ import bibSource from "../data/publications.bib?raw";
 import csvSource from "../data/publications.csv?raw";
 import { containerNames, entryFixes, notPublishers } from "../data/publication-fixes";
 import { topicByName, type TopicId } from "../data/research";
+import { downloadLinks } from "../data/publication-links";
 
 export type PubType = "book" | "edited" | "chapter" | "article" | "conference" | "abstract" | "thesis" | "other";
 /** Order of the "by type" view. */
@@ -20,6 +21,8 @@ export interface Publication {
   scopus: boolean;
   /** MTMT record of the item (shown as a quiet link next to the reference). */
   mtmt: string | null;
+  /** Free download / publisher page, from src/data/publication-links.ts. */
+  download: string | null;
   /** The APA 7 reference as HTML. */
   html: string;
 }
@@ -115,6 +118,7 @@ function load(): Publication[] {
         topic: m ? topicByName(m.terulet) : null,
         scopus: m?.scopus === "igen",
         mtmt: mtmtUrl,
+        download: downloadLinks[entry.id] ?? null,
         html: format(fix(entry, m?.language ?? "")),
       } satisfies Publication;
     })

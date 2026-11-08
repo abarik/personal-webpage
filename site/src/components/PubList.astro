@@ -11,9 +11,10 @@ const t = ui[lang];
       {showYear && <span class="pw-pub-year">{p.year}</span>}
       <span class="pw-pub">
         <span set:html={p.html} />
-        {(p.scopus || p.mtmt) && (
+        {(p.scopus || p.mtmt || p.download) && (
           <span class="pw-pub-meta">
             {p.scopus && <span class="pw-tag">{t.scopus}</span>}
+            {p.download && <a class="pw-download" href={p.download}>{t.download}</a>}
             {p.mtmt && <a href={p.mtmt}>MTMT</a>}
           </span>
         )}
