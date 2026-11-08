@@ -20,7 +20,7 @@ const sections =
   : topics.map((tp) => ({ id: tp.id, title: tp.title[lang], items: byTopic(tp.id), showYear: true }));
 ---
 <Base lang={lang} page={id} title={id === "publications" ? page.title : `${t.pages[id]} · ${page.title}`} description={page.description}>
-  <PageHead title={page.title} lead={page.lead} />
+  <PageHead title={page.title} lead={page.lead} notice={page.notice} />
   <SubNav lang={lang} page={id} />
   {sections.filter((s) => s.items.length).map((s) => (
     <section class="pw-section" id={s.id}>

@@ -1,8 +1,9 @@
 ---
-interface Props { title: string; lead?: string }
-const { title, lead } = Astro.props;
+interface Props { title: string; lead?: string; notice?: string }
+const { title, lead, notice } = Astro.props;
 ---
 <header class="pw-pagehead">
   <h1>{title}</h1>
   {lead && <p class="pw-lead" set:html={lead} />}
+  {notice && <p class="pw-notice" role="note">{notice}</p>}
 </header>

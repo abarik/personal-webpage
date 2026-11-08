@@ -9,6 +9,8 @@ const pages = defineCollection({
     title: z.string(),
     description: z.string(),
     lead: z.string().optional(),
+    /** A short notice shown under the heading (e.g. "work in progress"). */
+    notice: z.string().optional(),
   }),
 });
 

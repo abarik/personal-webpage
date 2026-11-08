@@ -17,5 +17,7 @@ export default defineConfig({
   redirects: {
     "/oktatas/kurzusok/": "/oktatas/",
     "/en/teaching/courses/": "/en/teaching/",
+    "/oktatas/irodalom/": "/oktatas/",
+    "/en/teaching/reading/": "/en/teaching/",
   },
 });

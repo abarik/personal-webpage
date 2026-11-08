@@ -879,3 +879,18 @@ html[data-theme="dark"] .pw-book-drawn { color: #1d1a17; }
 .pw-pub-meta a.pw-download { color: var(--pw-accent); }
 .pw-pub-meta a.pw-download::after { content: "\2009↓"; }
 
+/* A short notice under a page heading (e.g. "the list is being checked"). */
+.pw-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 1.25rem 0 0;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--pw-accent) 30%, var(--pw-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--pw-accent) 6%, var(--pw-surface));
+  color: var(--pw-text);
+  font-size: 0.9rem;
+}
+.pw-notice::before { content: ""; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--pw-accent); }
+

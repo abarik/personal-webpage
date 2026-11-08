@@ -5,9 +5,9 @@ export const langs: Lang[] = ["hu", "en"];
 export const routes = {
   home: { hu: "/", en: "/en/" },
   research: { hu: "/kutatas/", en: "/en/research/" },
-  teaching: { hu: "/oktatas/", en: "/en/teaching/" },
+  teaching: { hu: "/oktatas/videok/", en: "/en/teaching/videos/" },
   "teaching-notes": { hu: "/oktatas/jegyzetek/", en: "/en/teaching/notes/" },
-  "teaching-reading": { hu: "/oktatas/irodalom/", en: "/en/teaching/reading/" },
+  "teaching-reading": { hu: "/oktatas/", en: "/en/teaching/" },
   publications: { hu: "/publikaciok/", en: "/en/publications/" },
   "publications-year": { hu: "/publikaciok/idorendben/", en: "/en/publications/by-year/" },
   "publications-type": { hu: "/publikaciok/tipus-szerint/", en: "/en/publications/by-type/" },
@@ -37,6 +37,8 @@ export function url(path: string): string {
   return base + path;
 }
 export const href = (id: PageId, lang: Lang) => url(routes[id][lang]);
+/** A main-menu section opens on its first tab (e.g. Teaching → reading list). */
+export const sectionHref = (id: PageId, lang: Lang) => href(subnav[id]?.[0] ?? id, lang);
 
 export const ui = {
   hu: {

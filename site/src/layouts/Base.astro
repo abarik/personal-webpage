@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import Icon from "../components/Icon.astro";
-import { href, nav, parent, ui, langs, links, type Lang, type PageId } from "../lib/i18n";
+import { href, sectionHref, nav, parent, ui, langs, links, type Lang, type PageId } from "../lib/i18n";
 
 interface Props {
   lang: Lang;
@@ -70,7 +70,7 @@ const section = parent[page] ?? page;
         <ul>
           {nav.map((id) => (
             <li>
-              <a href={href(id, lang)} aria-current={id === page ? "page" : id === section ? "true" : undefined}>
+              <a href={sectionHref(id, lang)} aria-current={id === page ? "page" : id === section ? "true" : undefined}>
                 {id === section && <span class="pw-nav-pill" aria-hidden="true" />}
                 <span>{t.pages[id]}</span>
               </a>
