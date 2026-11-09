@@ -876,8 +876,9 @@ html[data-theme="dark"] .pw-book-drawn { color: #1d1a17; }
 .pw-stat a:hover { color: var(--pw-accent); text-decoration-color: currentColor; }
 
 /* Free download link: the one accented item in a publication's meta line. */
-.pw-pub-meta a.pw-download { color: var(--pw-accent); }
-.pw-pub-meta a.pw-download::after { content: "\2009↓"; }
+.pw-pub-meta a.pw-download, a.pw-download { color: var(--pw-accent); font-weight: 600; text-decoration: none; }
+a.pw-download:hover { text-decoration: underline; }
+.pw-pub-meta a.pw-download::after, a.pw-download::after { content: "\2009↓"; font-weight: 400; }
 
 /* A short notice under a page heading (e.g. "the list is being checked"). */
 .pw-notice {

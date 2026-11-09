@@ -17,7 +17,8 @@ description: Ajánlott szakirodalom a kurzusaimhoz – statisztika, számítást
 ### Statisztikai módszerek
 
 <ul class="pw-refs">
-<li>Abari, K. (2025). <i>Adatkezelés és egyváltozós elemzések R-ben</i>. Debreceni Egyetemi Kiadó.<span class="pw-note">A kurzusaimhoz készült tankönyv.</span></li>
+<li>Abari, K., &amp; Balázs, K. (Szerk.). (2025). <i>Pszichológiai statisztika, alapismeretek – jamovi és R példákkal</i>. Debreceni Egyetemi Kiadó.<span class="pw-note"><a class="pw-download" href="https://dupress.unideb.hu/hu/termek/pszichologiai-statisztika-alapismeretek-jamovi-es-r-peldakkal/">Letöltés</a> · Bevezető tankönyv jamovi és R példákkal.</span></li>
+<li>Abari, K. (2025). <i>Adatkezelés és egyváltozós elemzések R-ben</i>. Debreceni Egyetemi Kiadó.<span class="pw-note"><a class="pw-download" href="https://dupress.unideb.hu/hu/termek/adatkezeles-es-egyvaltozos-elemzesek-r-ben/">Letöltés</a> · A kurzusaimhoz készült tankönyv.</span></li>
 <li>Freedman, D., Pisani, R., &amp; Roger, P. (2005). <i>Statisztika – Statisztikai módszerek a társadalomkutatásban</i>. Typotex.</li>
 <li>Hajtman, B. (1968a). <i>Bevezetés a matematikai statisztikába pszichológusok számára</i>. Akadémiai Kiadó.</li>
 <li>Hajtman, B. (1968b). <i>Matematikai statisztika pszichológus szakos hallgatók részére</i>. Akadémiai Kiadó.</li>
@@ -31,9 +32,14 @@ description: Ajánlott szakirodalom a kurzusaimhoz – statisztika, számítást
 ## Számítástechnika
 
 <ul class="pw-refs">
-<li>American Psychological Association. (2020). <i>Publication manual of the American Psychological Association</i> (7th ed.). American Psychological Association.<span class="pw-note">Angol nyelvű. Az APA hivatkozási stílus hivatalos kézikönyve.</span></li>
-<li>Eco, U. (1996). <i>Hogyan írjunk szakdolgozatot?</i> Kairosz Kiadó.</li>
-<li>Csernoch, M., &amp; Biró, P. (2015). <i>Sprego programming</i>. LAP LAMBERT Academic Publishing.<span class="pw-note">Angol nyelvű. A Sprego táblázatkezelési módszer.</span></li>
+<li>Abari, K. (2025). <i>Adatkezelés és egyváltozós elemzések R-ben</i>. Debreceni Egyetemi Kiadó.<span class="pw-note"><a class="pw-download" href="https://dupress.unideb.hu/hu/termek/adatkezeles-es-egyvaltozos-elemzesek-r-ben/">Letöltés</a> · Adatkezelés R-ben és RStudióban.</span></li>
+<li>Navarro, D. J., &amp; Foxcroft, D. R. (2025). <i>Learning statistics with jamovi: A tutorial for beginners in statistical analysis</i>. Open Book Publishers. <a href="https://doi.org/10.11647/OBP.0333">https://doi.org/10.11647/OBP.0333</a><span class="pw-note"><a class="pw-download" href="https://www.learnstatswithjamovi.com/">Letöltés</a> · Angol nyelvű, szabadon elérhető. A jamovi használata az adatbeviteltől a leíró statisztikáig.</span></li>
+<li>Schweigert, W. A. (2021). <i>Research methods in psychology: A handbook</i> (4th ed.). Waveland Press.<span class="pw-note">Angol nyelvű. A kutatási folyamat lépései.</span></li>
+<li>University of Helsinki. (2023). <i>Student’s digital skills</i>. <a href="https://blogs.helsinki.fi/students-digital-skills/">https://blogs.helsinki.fi/students-digital-skills/</a><span class="pw-note">Angol nyelvű. Fájlkezelés, szövegszerkesztés, táblázatkezelés, bemutatók.</span></li>
+<li>Poulson, B. (2019). <i>Jamovi</i> [Online kurzus]. Datalab.cc. <a href="https://datalab.cc/jamovi/">https://datalab.cc/jamovi/</a><span class="pw-note">Angol nyelvű videós kurzus a jamovi használatáról.</span></li>
+<li>Posit. (é. n.). <i>Hello, Quarto</i> [Oktatóanyag]. <a href="https://quarto.org/docs/get-started/hello/rstudio.html">https://quarto.org/docs/get-started/hello/rstudio.html</a><span class="pw-note">Angol nyelvű. Dokumentumok készítése Quartóval RStudióban.</span></li>
+<li>Cone, M. (é. n.). <i>The Markdown guide</i>. <a href="https://www.markdownguide.org/">https://www.markdownguide.org/</a><span class="pw-note">Angol nyelvű. A Markdown jelölőnyelv kézikönyve.</span></li>
+<li>JabRef. (é. n.). <i>Getting started</i>. <a href="https://docs.jabref.org/getting-started">https://docs.jabref.org/getting-started</a><span class="pw-note">Angol nyelvű. Bevezetés a JabRef hivatkozáskezelőbe.</span></li>
 </ul>
 
 ## Mesterséges intelligencia
@@ -57,8 +63,23 @@ description: Ajánlott szakirodalom a kurzusaimhoz – statisztika, számítást
 ## Tudástérelmélet
 
 <ul class="pw-refs">
-<li>Doignon, J.-P., &amp; Falmagne, J.-C. (1985). Spaces for the assessment of knowledge. <i>International Journal of Man-Machine Studies, 23</i>(2), 175–196.<span class="pw-note">Angol nyelvű. Az elmélet alapcikke.</span></li>
-<li>Doignon, J.-P., &amp; Falmagne, J.-C. (1999). <i>Knowledge spaces</i>. Springer.<span class="pw-note">Angol nyelvű.</span></li>
-<li>Falmagne, J.-C., &amp; Doignon, J.-P. (2011). <i>Learning spaces: Interdisciplinary applied mathematics</i>. Springer.<span class="pw-note">Angol nyelvű.</span></li>
+<li>Tóth, Z. (2012). <i>Alkalmazott tudástérelmélet</i>. Gondolat Kiadói Kör.<span class="pw-note">Magyar nyelvű bevezetés a tudástérelmélet alkalmazásaiba.</span></li>
+<li>Doignon, J.-P., &amp; Falmagne, J.-C. (1999). <i>Knowledge spaces</i>. Springer.<span class="pw-note">Angol nyelvű. Az elmélet alapműve.</span></li>
 <li>Falmagne, J.-C., Albert, D., Doble, C., Eppstein, D., &amp; Hu, X. (Eds.). (2013). <i>Knowledge spaces: Applications in education</i>. Springer.<span class="pw-note">Angol nyelvű. Alkalmazások az oktatásban.</span></li>
+<li>de Chiusole, D., Stefanutti, L., Anselmi, P., &amp; Robusto, E. (2020). Stat-Knowlab: Assessment and learning of statistics with competence-based knowledge space theory. <i>International Journal of Artificial Intelligence in Education, 30</i>(4), 668–700. <a href="https://doi.org/10.1007/s40593-020-00223-1">https://doi.org/10.1007/s40593-020-00223-1</a><span class="pw-note">Angol nyelvű. A statisztika tanulásának adaptív felmérése.</span></li>
+</ul>
+
+### Saját tanulmányok
+
+<ul class="pw-refs">
+<li>Abari, K., &amp; Máth, J. (2015). Tudásterek alkalmazása az oktatásban. In <i>Alkalmazott pszichológiai tanulmányok a Szociál- és Munkapszichológiai Tanszék fennállásának 25. évfordulójára</i> (pp. 211–232).</li>
+<li>Máth, J., &amp; Abari, K. (2011). Knowledge spaces and historical knowledge in practice. <i>Applied Psychology in Hungary</i>, (1), 126–152.</li>
+<li>Abari, K., &amp; Máth, J. (2010). A történelmi tudás mérése a tudástér-elmélet segítségével. In <i>A nemzeti emlékezet vizsgálatának pszichológiai szempontjai</i> (pp. 191–216).</li>
+</ul>
+
+### R-csomagok
+
+<ul class="pw-refs">
+<li>Ünlü, A., &amp; Sargin, A. (2010). DAKS: An R package for data analysis methods in knowledge space theory. <i>Journal of Statistical Software, 37</i>(2), 1–31. <a href="https://doi.org/10.18637/jss.v037.i02">https://doi.org/10.18637/jss.v037.i02</a></li>
+<li>Stahl, C. (2011). <i>kst: Knowledge space theory</i> [R csomag]. <a href="https://CRAN.R-project.org/package=kst">https://CRAN.R-project.org/package=kst</a></li>
 </ul>
